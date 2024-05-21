@@ -1,0 +1,20 @@
+.componentDateField {
+    .componentDateField__calendarBackground {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 10;
+    }
+
+    .componentDateField__calendar {
+        width: 300px;
+        z-index: 11;
+    }
+
+    .componentDateField__range {
+        color: #333;
+        justify-content: center;
+        height: 100%;
+    }
+}

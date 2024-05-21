@@ -1,0 +1,25 @@
+@import './animations.scss';
+
+.componentSkeleton {
+    background-color: #e1e1e1;
+    border-radius: var(--radius);
+    display: flex;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+        animation: shimmer 2.5s infinite;
+        animation-delay: var(--random-time, 0);
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.7),
+            transparent
+        );
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+    }
+}

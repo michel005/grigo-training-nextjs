@@ -1,0 +1,38 @@
+@import '../../styles/mediaQueries.scss';
+
+.loginPage {
+    background-color: #fffc;
+    border-radius: var(--radius);
+    backdrop-filter: blur(4px);
+    box-shadow: #ddd 0 0 21px 0px;
+    padding: 63px 35px 35px;
+    margin: 0 auto;
+    max-width: 400px;
+    transition: all 0.25s;
+    width: 100%;
+    z-index: 10;
+}
+
+.commands {
+    justify-content: space-between;
+    margin-top: 14px;
+}
+
+.background {
+    background: linear-gradient(25deg, #eee, #f4f4f4);
+    z-index: 0;
+}
+
+.loading {
+    .loginPage {
+        box-shadow: var(--primary-color-50) 0 0 14px;
+    }
+}
+
+@include tablet {
+    .loginPage {
+        background-color: transparent;
+        box-shadow: none;
+        max-width: none;
+    }
+}

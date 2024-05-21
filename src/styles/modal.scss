@@ -1,0 +1,102 @@
+@import './mediaQueries.scss';
+
+.componentModal {
+    transition: all 0.25s;
+    z-index: 100;
+
+    .componentModal__modalContent {
+        background-color: #fff;
+        border-radius: var(--radius);
+        display: flex;
+        flex-direction: column;
+        max-width: calc(1360px - 28px);
+        transition: all 0.25s;
+
+        > header {
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            color: #aaa;
+            display: flex;
+            flex-direction: row;
+            font-size: 1.2em;
+            gap: 14px;
+            padding: 14px 21px;
+            transition: all 0.25s;
+
+            > button {
+                color: #000;
+                height: var(--component-button-height);
+            }
+        }
+
+        > main {
+            display: flex;
+            flex-direction: row;
+            gap: 21px;
+            padding: 21px;
+            transition: all 0.25s;
+        }
+
+        > footer {
+            border-top: 1px solid #ccc;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            gap: 14px;
+            padding: 14px;
+            transition: all 0.25s;
+        }
+
+        &.small {
+            max-width: 600px;
+            width: 600px;
+        }
+
+        &.medium {
+            max-width: 800px;
+            width: 800px;
+        }
+
+        &.big {
+            max-width: 1000px;
+            width: 1000px;
+        }
+    }
+
+    .componentModal__title {
+        flex-grow: 1;
+    }
+
+    &[data-context-variant='dialog'] {
+        .componentModal__modalContent {
+            width: 600px;
+        }
+    }
+}
+
+@include desktop {
+    .componentModal {
+        padding: 21px;
+
+        .componentModal__modalContent {
+            margin: auto;
+            min-width: auto;
+            width: 100% !important;
+        }
+    }
+}
+
+@include smallDesktop {
+    .componentModal {
+        overflow: auto;
+
+        &[data-context-variant='form'] {
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .componentModal__main {
+            flex-direction: column;
+        }
+    }
+}

@@ -1,0 +1,181 @@
+.componentFieldLayout {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 4px;
+    font-size: 17px;
+    width: 100%;
+
+    .componentFieldLayout__InputContainer {
+        background-color: #fff;
+        border-radius: var(--radius);
+        display: flex;
+        flex-direction: row;
+        min-height: var(--component-input-height);
+        outline: 1px solid #ccc;
+        position: relative;
+        transition: outline 0.25s;
+
+        > label {
+            align-self: center;
+            color: #aaa;
+            left: 10px;
+            font-size: 1em;
+            padding-left: 4px;
+            padding-right: 4px;
+            pointer-events: none;
+            position: absolute;
+            top: calc(50% - 0.6em);
+            transition: all 0.1s;
+            z-index: 1;
+        }
+
+        &:hover {
+            outline: 1px solid #666;
+            transition: none;
+        }
+    }
+
+    .componentFieldLayout__InputContainer__left,
+    .componentFieldLayout__InputContainer__right {
+        display: flex;
+        flex-direction: row;
+
+        &:empty {
+            width: 14px;
+        }
+
+        > button {
+            border-radius: 0;
+            height: 100%;
+        }
+    }
+
+    .componentFieldLayout__InputContainer__left {
+        > button {
+            &:first-child {
+                border-radius: var(--radius) 0 0 var(--radius);
+            }
+        }
+    }
+
+    .componentFieldLayout__InputContainer__right {
+        > button {
+            &:last-child {
+                border-radius: 0 var(--radius) var(--radius) 0;
+            }
+        }
+    }
+
+    .componentFieldLayout__InputContainer__input {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+
+        input,
+        > select,
+        > textarea,
+        > .componentFieldLayout__InputContainer__input__innerInput {
+            appearance: none;
+            background-color: transparent;
+            border: none;
+            font-size: inherit;
+            width: 100%;
+            outline: transparent;
+
+            &::placeholder {
+                color: transparent;
+                transition: all 0.25s;
+            }
+        }
+
+        > input[type='number'] {
+            text-align: right;
+        }
+
+        > textarea {
+            appearance: auto;
+            max-width: 100%;
+            min-height: 100px;
+            min-width: 100%;
+            padding: 14px 0;
+        }
+    }
+
+    &.hasValue {
+        .componentFieldLayout__InputContainer {
+            > label {
+                background-color: #fff;
+                color: #aaa;
+                font-size: 0.7em;
+                top: -8px;
+                transform: none;
+            }
+
+            input,
+            > select,
+            > textarea,
+            > .innerInput {
+                &::placeholder {
+                    color: #ddd;
+                }
+            }
+        }
+    }
+
+    .componentFieldLayout__InputContainer__info {
+        color: #aaa;
+        font-size: 0.7em;
+        padding-left: 10px;
+    }
+
+    &.hasError {
+        .componentFieldLayout__InputContainer {
+            outline-color: var(--error-color);
+        }
+
+        .componentFieldLayout__InputContainer__error {
+            color: var(--error-color);
+            font-size: 0.7em;
+            padding-left: 10px;
+        }
+    }
+
+    &.focus {
+        .componentFieldLayout__InputContainer {
+            outline-color: var(--primary-color);
+
+            > label {
+                color: var(--primary-color);
+            }
+
+            input,
+            > select,
+            > textarea,
+            > .innerInput {
+                &::placeholder {
+                    color: #ddd;
+                }
+            }
+        }
+    }
+
+    &.disabled {
+        .componentFieldLayout__InputContainer {
+            background-color: #f4f4f4;
+            pointer-events: none;
+
+            &:hover {
+                outline: 1px solid #ccc;
+            }
+        }
+    }
+}
+
+[data-context='sidebar'] {
+    .componentFieldLayout {
+        .componentFieldLayout__InputContainer {
+            min-height: 100%;
+        }
+    }
+}

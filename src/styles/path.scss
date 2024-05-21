@@ -1,0 +1,40 @@
+.componentPath {
+    align-self: flex-start;
+    align-items: center;
+    background-color: #f4f4f4;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 14px;
+    min-height: var(--component-button-height);
+    padding: 10px 14px;
+
+    > button.link {
+        color: #333;
+
+        .componentButton__leftSpace {
+            color: #333;
+            font-size: 1.2em;
+        }
+    }
+
+    > span {
+        color: #333;
+    }
+
+    > .componentPath__pathName {
+        align-items: center;
+        color: var(--primary-color);
+        display: flex;
+        flex-direction: row;
+        gap: 4px;
+        pointer-events: none;
+        user-select: none;
+
+        > span {
+            align-self: center;
+            font-size: 1.2em;
+        }
+    }
+}

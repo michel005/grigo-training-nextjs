@@ -1,0 +1,48 @@
+.componentTagField {
+    .componentTagField__allTags {
+        align-items: center;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        gap: 14px !important;
+        margin-right: 14px;
+        min-height: var(--component-input-height);
+        padding: 14px 0;
+    }
+
+    .componentTagField__tag {
+        align-items: center;
+        background-color: #666;
+        border-radius: var(--radius);
+        color: #fff;
+        cursor: default;
+        font-size: 12px;
+        gap: 10px !important;
+        padding: 7px 10px 7px 14px;
+        transition: all 0.25s;
+
+        &:hover {
+            background-color: var(--primary-color);
+        }
+
+        > button {
+            align-self: center;
+            color: #fff;
+            height: auto;
+        }
+    }
+
+    .componentTagField__input {
+        flex-grow: 1;
+        width: 100%;
+    }
+
+    &.disabled {
+        .componentTagField__tag {
+            padding: 7px 14px;
+
+            &:hover {
+                background-color: #666;
+            }
+        }
+    }
+}

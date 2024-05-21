@@ -1,0 +1,97 @@
+.componentCalendar {
+    background-color: #fff;
+    border-radius: var(--radius);
+    min-width: 300px;
+    outline: 1px solid #ccc;
+    padding: 14px;
+    width: 300px;
+
+    .componentCalendar__monthYear {
+        align-self: center;
+        flex-grow: 1;
+        text-align: center;
+        width: 100%;
+    }
+
+    .componentCalendar__commands {
+        > button {
+            justify-content: flex-start;
+            width: 100%;
+        }
+    }
+
+    .componentCalendar__weekDaysAndDays {
+        border-radius: var(--radius);
+        gap: 14px;
+
+        button {
+            align-content: center;
+            font-size: 14px;
+            height: 36px;
+            justify-content: center;
+            min-width: 36px;
+            padding: 4px;
+            width: 100%;
+        }
+    }
+
+    .componentCalendar__weekDays {
+        background-color: var(--primary-color);
+        border-radius: var(--radius);
+        overflow: hidden;
+
+        button {
+            background-color: transparent;
+
+            &:hover {
+                background-color: #1113;
+                color: #fff;
+            }
+        }
+    }
+
+    .componentCalendar__days {
+        background-color: #fff;
+        border-radius: var(--radius);
+        box-shadow: #ccc 0 0 4px;
+        overflow: hidden;
+
+        > button {
+            background-color: #fff;
+            color: #666;
+
+            &:nth-child(even) {
+                background-color: #f7f7f7;
+            }
+
+            &:disabled {
+                color: #ccc;
+            }
+
+            &.current {
+                background-color: var(--primary-color-30);
+            }
+
+            &:hover {
+                background-color: var(--primary-color-80);
+                color: #fff;
+            }
+
+            &.selected {
+                background-color: var(--primary-color);
+                color: #fff;
+            }
+        }
+    }
+
+    .componentCalendar__weekDays,
+    .componentCalendar__days {
+        button {
+            border-radius: 0;
+
+            &::before {
+                opacity: 0 !important;
+            }
+        }
+    }
+}

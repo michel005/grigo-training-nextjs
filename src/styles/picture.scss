@@ -1,0 +1,43 @@
+@import './animations.scss';
+
+.componentPicture {
+    align-items: center;
+    background-color: #eee;
+    color: #aaa;
+    display: flex;
+    flex-direction: row;
+    font-size: var(--size, 200px);
+    height: var(--size, 200px);
+    justify-content: center;
+    object-fit: cover;
+    width: var(--size, 200px);
+
+    > span {
+        font-weight: bolder;
+        font-size: 0.5em;
+    }
+
+    &.rounded {
+        border-radius: var(--radius);
+    }
+
+    &.circle {
+        border-radius: 50%;
+    }
+
+    &.loading {
+        > span {
+            animation: rotate 2s infinite linear;
+            color: #aaa;
+            rotate: 0deg;
+        }
+    }
+}
+
+.componentPicture_withAlt {
+    > span {
+        font-family: 'Arial', sans-serif;
+        font-weight: normal;
+        font-size: 0.5em;
+    }
+}

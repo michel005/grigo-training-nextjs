@@ -1,0 +1,14 @@
+.componentHeaderTabsContent {
+    .componentHeaderTabsContent__headerAndTabs {
+        .componentHeaderTabsContent__headerAndTabs__tabs {
+            align-self: flex-start;
+
+            .componentButton {
+                > p {
+                    flex-grow: 1;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,112 @@
+@import './mediaQueries.scss';
+
+.componentBackground {
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+
+    &.blur {
+        background-color: #1113;
+        backdrop-filter: blur(4px);
+    }
+
+    &.center {
+        align-items: flex-start;
+        display: flex;
+        justify-content: center;
+        overflow: auto;
+        padding-bottom: 35px;
+        padding-top: 35px;
+
+        > div {
+            margin-bottom: auto;
+            margin-top: auto;
+        }
+    }
+}
+
+.componentFlex {
+    display: flex;
+    gap: 21px;
+
+    &.flexRow {
+        flex-direction: row;
+    }
+
+    &.flexColumn {
+        flex-direction: column;
+    }
+}
+
+.componentFormLayout {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 21px;
+
+    &[data-flex-direction='row'] {
+        flex-direction: row;
+    }
+
+    &[data-flex-direction='column'] {
+        flex-direction: column;
+    }
+}
+
+.componentGrid {
+    display: grid;
+    grid-template-columns: var(--column-template);
+    grid-template-rows: var(--row-template);
+}
+
+.hideScroll {
+    &::-webkit-scrollbar {
+        height: 0;
+        width: 0;
+    }
+}
+
+@include desktop {
+    .hideWhenDesktop {
+        display: none;
+    }
+}
+
+@include smallDesktop {
+    .hideWhenSmallDesktop {
+        display: none;
+    }
+
+    .componentBackground {
+        &.center {
+            align-items: flex-start;
+        }
+    }
+
+    .componentFlex.responsive {
+        &.flexRow {
+            flex-direction: column;
+        }
+    }
+
+    .componentFormLayout {
+        &[data-flex-direction='row'] {
+            flex-direction: column;
+        }
+    }
+}
+
+@include bigTablet {
+    .hideWhenBigTablet {
+        display: none;
+    }
+}
+
+@include tablet {
+    .hideWhenTablet {
+        display: none;
+    }
+}

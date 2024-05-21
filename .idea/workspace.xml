@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="27bfe4b7-5260-4a37-9861-b1de25c5f8d8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/execution/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/training/[id]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/training/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/business/training.business.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/constants/appInfo.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/mock.context.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/TrainingType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/customers/[id]/address.tab.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/customers/[id]/details.tab.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/customers/[id]/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/customers/[id]/products.tab.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/customers/[id]/purchases.tab.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/customers/filter.modal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/customers/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/myUser/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/myUser/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/products/[id]/details.tab.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/products/[id]/event.modal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/products/[id]/history.tab.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/products/[id]/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/products/[id]/reserve.modal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/products/filter.modal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/products/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/products/productCard.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/sell/[id]/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/sell/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shoppingCart/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/address.business.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/business.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/business.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/customer.business.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/picture.business.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/product.business.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/sell.business.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/user.business.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/user.business.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/form/customer.form.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/form/product.form.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/formFields/CustomerFormField.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/message/CancelSell.modal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/message/CustomerRemove.modal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/message/ProductRemove.modal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/customer.sidebar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/customerDetail.sidebar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/product.sidebar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/productDetail.sidebar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/sellDetail.sidebar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/shoppingCart.sidebar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/picture.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/picture.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/provider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/provider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/table/Customer.table.definition.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/table/Product.table.definition.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/table/customerColumn.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/table/productColumn.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/forms.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/forms.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/pageDefinition.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/pageDefinition.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/productStatus.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/navbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/CustomerType.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/ProductSellType.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/ProductType.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/SellType.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/maskUtils.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/maskUtils.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="false" />
+    <option name="myAllFileTypesSelected" value="true" />
+    <option name="mySelectedFileTypes">
+      <set />
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2f4Kwb59fQsArJ0TrLHOPlOR9LN" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Desenvolvimento/grigo-training-nextjs/src/app&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Desenvolvimento\\grigo-training-nextjs\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Desenvolvimento\\grigo-training-nextjs\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Desenvolvimento\grigo-training-nextjs\src\app" />
+      <recent name="C:\Desenvolvimento\grigo-training-nextjs\src\business" />
+      <recent name="C:\Desenvolvimento\grigo-training-nextjs\src\store" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Desenvolvimento\grigo-training-nextjs\src\app\training" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-WS-241.14494.235" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="27bfe4b7-5260-4a37-9861-b1de25c5f8d8" name="Changes" comment="" />
+      <created>1713055152719</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713055152719</updated>
+      <workItem from="1713055155331" duration="78000" />
+      <workItem from="1713055262847" duration="2224000" />
+      <workItem from="1713575258234" duration="286000" />
+      <workItem from="1713616376756" duration="2422000" />
+      <workItem from="1713618931505" duration="76000" />
+      <workItem from="1713621931547" duration="5929000" />
+      <workItem from="1713638891723" duration="4574000" />
+      <workItem from="1713750828113" duration="3934000" />
+      <workItem from="1713790034955" duration="14370000" />
+      <workItem from="1713885397674" duration="3395000" />
+      <workItem from="1713921113645" duration="1360000" />
+      <workItem from="1713967373129" duration="10116000" />
+      <workItem from="1714705615782" duration="2350000" />
+      <workItem from="1714750815544" duration="627000" />
+      <workItem from="1714827659648" duration="3545000" />
+      <workItem from="1714837392881" duration="2334000" />
+      <workItem from="1714875613187" duration="4103000" />
+      <workItem from="1715035486952" duration="116000" />
+      <workItem from="1715383162247" duration="1268000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
