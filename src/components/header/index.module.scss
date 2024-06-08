@@ -1,0 +1,27 @@
+.header {
+    --header-height: 74px;
+
+    align-items: center;
+    background-color: #111;
+    color: #fff;
+    flex-direction: row;
+    height: var(--header-height);
+    justify-content: space-between;
+    padding: 0 21px;
+    position: static;
+    width: 100%;
+    z-index: 1;
+
+    > a {
+        align-self: center;
+        color: #fff;
+        display: flex;
+        flex-direction: row;
+        font-size: 16px;
+        gap: 7px;
+
+        > i {
+            font-size: 1.2em;
+        }
+    }
+}

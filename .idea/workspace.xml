@@ -5,72 +5,135 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27bfe4b7-5260-4a37-9861-b1de25c5f8d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/execution/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/training/[id]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/training/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/business/training.business.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/appInfo.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/mock.context.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/TrainingType.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/global.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/not-found.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/page.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/button/index.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/button/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/button/index.type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/field/layout/index.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/field/layout/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/field/layout/index.type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/field/text/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/field/text/index.type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/header/index.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/header/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/icon/index.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/icon/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/settings/AxiosSettings.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/GoogleIcon.type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components.json" beforeDir="false" afterPath="$PROJECT_DIR$/components.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/customers/[id]/address.tab.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/customers/[id]/details.tab.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/customers/[id]/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/customers/[id]/products.tab.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/customers/[id]/purchases.tab.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/customers/filter.modal.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/customers/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/myUser/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/myUser/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prettier.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/prettier.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/execution/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/head.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/head.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/login/page.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/myUser/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/not-found.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/not-found.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/products/[id]/details.tab.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/products/[id]/event.modal.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/products/[id]/history.tab.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/products/[id]/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/products/[id]/reserve.modal.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/products/filter.modal.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/products/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/products/productCard.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/sell/[id]/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/sell/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shoppingCart/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/business/address.business.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/business/business.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/business.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/business/customer.business.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/business/picture.business.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/business/product.business.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/business/sell.business.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/business/user.business.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/user.business.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form/customer.form.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form/product.form.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/formFields/CustomerFormField.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/message/CancelSell.modal.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/message/CustomerRemove.modal.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/message/ProductRemove.modal.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/customer.sidebar.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/customerDetail.sidebar.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/product.sidebar.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/productDetail.sidebar.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/sellDetail.sidebar.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/shoppingCart.sidebar.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/picture.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/picture.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/provider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/provider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/table/Customer.table.definition.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/table/Product.table.definition.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/table/customerColumn.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/table/productColumn.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/forms.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/forms.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/pageDefinition.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/pageDefinition.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/productStatus.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/navbar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/CustomerType.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/ProductSellType.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/ProductType.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/SellType.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/maskUtils.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/maskUtils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/signin/page.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/signin/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/training/[id]/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/training/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/business.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/training.business.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/user.business.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/apiTable.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/bag.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/button.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/buttonGroup.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/calendar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/charts/barChart.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/field/currencyField.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/field/dateField.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/field/fakeField.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/field/field.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/field/fieldLayout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/field/numberField.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/field/pictureField.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/field/selectField.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/field/tagField.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/icon.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/background.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/confirmationModal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/flexColumn.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/flexRow.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/formLayout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/grid.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/headerTabsContent.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/dashboard.sidebar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/myUser.sidebar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/path.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/picture.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/provider.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/skeleton.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stepper.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/table.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/tabs.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/appInfo.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/brasilStates.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/forms.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/pageDefinition.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/personType.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useApi.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useForm.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useFormApi.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/usePage.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/usePagination.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useText.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/cache.context.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/config.context.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/mock.context.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/session.context.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/animations.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/bag.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/barChart.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/button.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/buttonGroup.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/calendar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/dateField.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/fieldLayout.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/global.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/headerTabsContent.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/icon.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/layout.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/main.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/mediaQueries.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/modal.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/navbar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/path.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/picture.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/pictureField.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/selectField.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/skeleton.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/stepper.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/table.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/tagField.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/AddressType.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/GoogleIcons.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/LoginType.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/PaginationType.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/PictureType.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/TrainingType.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/UserType.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/dateUtils.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/fileUtils.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/maskUtils.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/numberUtils.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/sortUtils.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/stringUtils.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,16 +143,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
+        <option value="SCSS File" />
         <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
       </list>
-    </option>
-  </component>
-  <component name="FormatOnSaveOptions">
-    <option name="myRunOnSave" value="false" />
-    <option name="myAllFileTypesSelected" value="true" />
-    <option name="mySelectedFileTypes">
-      <set />
     </option>
   </component>
   <component name="Git.Settings">
@@ -106,34 +164,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Desenvolvimento/grigo-training-nextjs/src/app&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Desenvolvimento\\grigo-training-nextjs\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Desenvolvimento\\grigo-training-nextjs\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Dev/grigo-training-nextjs/src/components/field/text",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "npm.start.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Dev\\grigo-training-nextjs\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "C:\\Dev\\grigo-training-nextjs\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dev\grigo-training-nextjs\src\components\field\text" />
+      <recent name="C:\Dev\grigo-training-nextjs" />
+      <recent name="C:\Dev\grigo-training-nextjs\src\components" />
       <recent name="C:\Desenvolvimento\grigo-training-nextjs\src\app" />
       <recent name="C:\Desenvolvimento\grigo-training-nextjs\src\business" />
-      <recent name="C:\Desenvolvimento\grigo-training-nextjs\src\store" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Dev\grigo-training-nextjs\src\components\header" />
       <recent name="C:\Desenvolvimento\grigo-training-nextjs\src\app\training" />
     </key>
   </component>
@@ -168,7 +230,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-WS-241.14494.235" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.17011.90" />
       </set>
     </attachedChunks>
   </component>
@@ -199,6 +261,12 @@
       <workItem from="1714875613187" duration="4103000" />
       <workItem from="1715035486952" duration="116000" />
       <workItem from="1715383162247" duration="1268000" />
+      <workItem from="1717646886848" duration="927000" />
+      <workItem from="1717647834180" duration="6838000" />
+      <workItem from="1717719005102" duration="1299000" />
+      <workItem from="1717730663326" duration="2758000" />
+      <workItem from="1717804640869" duration="1551000" />
+      <workItem from="1717825769711" duration="8118000" />
     </task>
     <servers />
   </component>

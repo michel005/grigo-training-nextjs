@@ -1,38 +1,65 @@
-@import '../../styles/mediaQueries.scss';
-
 .loginPage {
-    background-color: #fffc;
+    align-items: center;
+    background: linear-gradient(45deg, #eee, transparent, #ccc);
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    position: relative;
+
+    > small {
+        color: #aaa;
+        position: absolute;
+        bottom: 14px;
+    }
+}
+
+.modal {
+    background-color: #fff;
+    border: 1px solid #ccc;
     border-radius: var(--radius);
-    backdrop-filter: blur(4px);
-    box-shadow: #ddd 0 0 21px 0px;
-    padding: 63px 35px 35px;
-    margin: 0 auto;
-    max-width: 400px;
-    transition: all 0.25s;
-    width: 100%;
-    z-index: 10;
-}
+    box-shadow: #ccc 0 0 14px;
+    flex-direction: column;
+    gap: 21px;
+    padding: 35px;
 
-.commands {
-    justify-content: space-between;
-    margin-top: 14px;
-}
+    > hr {
+        margin-block: 14px;
+    }
 
-.background {
-    background: linear-gradient(25deg, #eee, #f4f4f4);
-    z-index: 0;
-}
+    > section {
+        flex-direction: column;
+        gap: 21px;
+        width: 350px;
 
-.loading {
-    .loginPage {
-        box-shadow: var(--primary-color-50) 0 0 14px;
+        > a {
+            text-align: right;
+        }
     }
 }
 
-@include tablet {
-    .loginPage {
-        background-color: transparent;
-        box-shadow: none;
-        max-width: none;
+.login {
+    button {
+        justify-content: center;
     }
+}
+
+.error {
+    background-color: #ffe0e0;
+    border: 1px solid #ff9e9e;
+    border-radius: var(--radius);
+    color: #ff3939;
+    padding: 14px;
+    text-align: center;
+}
+
+.signin {
+    button {
+        background-color: #eee;
+        color: #333;
+        justify-content: center;
+    }
+}
+
+.separator {
+    flex-grow: 1;
 }

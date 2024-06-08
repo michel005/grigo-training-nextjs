@@ -1,0 +1,23 @@
+.notFound {
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+
+    > h1 {
+        border-right: 1px solid #aaa;
+        color: #aaa;
+        font-size: 200px;
+        margin-right: 28px;
+        padding-right: 28px;
+    }
+
+    > section {
+        flex-direction: column;
+        gap: 14px;
+
+        > p {
+            max-width: 500px;
+        }
+    }
+}

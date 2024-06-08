@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+:root {
+    --primary-color: #0581ff;
+    --radius: 7px;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Oxygen', monospace;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+hr {
+    border: none;
+    height: 1em;
+    outline: transparent;
+    position: relative;
+
+    &:before {
+        background-color: #ddd;
+        content: '';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        top: calc(50% - 0.5px);
+        width: 100%;
+    }
+
+    &:after {
+        align-self: center;
+        background-color: #fff;
+        color: #999;
+        content: attr(data-text);
+        left: 50%;
+        padding-inline: 7px;
+        position: absolute;
+        white-space: nowrap;
+        top: 50%;
+        transform: translateY(-50%) translateX(-50%);
+    }
+}
+
+button,
+div,
+header,
+nav,
+section {
+    display: flex;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    left: 0;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+a {
+    color: var(--primary-color);
+    transition: all 0.25s;
+
+    &:hover {
+        opacity: 0.6;
+    }
+
+    &:active {
+        opacity: 1;
+    }
+}

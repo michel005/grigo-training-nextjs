@@ -1,0 +1,36 @@
+.homePage {
+    background-image: url(https://www.auxiliadorapredial.com.br/blog/wp-content/uploads/academia-em-condominio-1.webp);
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.section {
+    flex-direction: row;
+    flex-grow: 1;
+    padding-top: var(--header-height);
+}
+
+.text {
+    align-items: center;
+    background: linear-gradient(45deg, #000f, transparent);
+    backdrop-filter: blur(4px);
+    flex-direction: column;
+    gap: 48px;
+    justify-content: center;
+    padding: 35px 48px;
+    text-align: center;
+    width: 100%;
+
+    > h1 {
+        color: #fff;
+        font-size: 80px;
+        line-height: 1em;
+        width: 800px;
+    }
+
+    > p {
+        color: #fffa;
+        line-height: 1.2em;
+        width: 500px;
+    }
+}

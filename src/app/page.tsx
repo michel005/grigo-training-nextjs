@@ -1,44 +1,30 @@
-'use client'
+import style from './page.module.scss'
 
-import Button from '@/components/button'
-import { Icon } from '@/components/icon'
-import FlexColumn from '@/components/layout/flexColumn'
-import Grid from '@/components/layout/grid'
-import Path from '@/components/path'
-import PageDefinition, { AllPages } from '@/constants/pageDefinition'
-import { useRouter } from 'next/navigation'
-import './page.scss'
+const Section = ({
+    header,
+    description,
+}: {
+    header: string
+    description: string
+}) => {
+    return (
+        <section className={style.section}>
+            <div className={style.text}>
+                <h1>{header}</h1>
+                <p>{description}</p>
+            </div>
+        </section>
+    )
+}
 
 const HomePage = () => {
-    const router = useRouter()
-
     return (
-        <>
-            <Path values={[AllPages.dashboard]} />
-            <Grid columnTemplate="1fr 1fr 1fr 1fr" className="homePageCards">
-                {PageDefinition.filter((x) => !x.hide)
-                    .filter((x) => x.path !== '/')
-                    .map((page) => {
-                        return (
-                            <FlexColumn
-                                className="homePageCard"
-                                key={page.name}
-                            >
-                                <img alt={page.name} src={page.picture || ''} />
-                                <Button
-                                    leftSpace={
-                                        page.icon && <Icon>{page.icon}</Icon>
-                                    }
-                                    className="homePageCardOption"
-                                    onClick={() => router.push(page.path)}
-                                >
-                                    {page.name}
-                                </Button>
-                            </FlexColumn>
-                        )
-                    })}
-            </Grid>
-        </>
+        <div className={style.homePage}>
+            <Section
+                header="Gestor de treino profissional"
+                description="Controle seus treinos com um sistema completo e unico, com dicas, opiniões de especialistas e agilidade."
+            />
+        </div>
     )
 }
 

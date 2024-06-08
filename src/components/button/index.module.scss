@@ -1,0 +1,89 @@
+.button {
+    --button-height: 42px;
+
+    align-items: center;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--radius);
+    color: #fff;
+    cursor: pointer;
+    flex-direction: row;
+    font-size: 14px;
+    gap: 14px;
+    height: var(--button-height);
+    overflow: auto;
+    padding-inline: 17px;
+    position: relative;
+
+    > i {
+        font-size: 1.2em;
+    }
+
+    &::before {
+        background-color: #fff4;
+        content: '';
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        transition: all 0.25s;
+        width: 100%;
+    }
+
+    &:hover {
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    &:active {
+        &::before {
+            opacity: 0.5;
+        }
+    }
+}
+
+.disabled {
+    pointer-events: none;
+    filter: grayscale(1);
+}
+
+@keyframes rotate {
+    100% {
+        rotate: -360deg;
+    }
+}
+
+.loading {
+    color: #fff;
+    cursor: not-allowed;
+    justify-content: center;
+    height: var(--button-height);
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    > i {
+        animation: rotate 2s infinite linear;
+        font-size: 1.4em;
+    }
+}
+
+.loadingState {
+    filter: invert(1) grayscale(1);
+
+    > i {
+        opacity: 0;
+    }
+
+    > .insideButton {
+        opacity: 0;
+    }
+}
+
+.insideButton {
+    flex-direction: row;
+}
