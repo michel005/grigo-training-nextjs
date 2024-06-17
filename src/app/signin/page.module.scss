@@ -1,0 +1,35 @@
+.form {
+    button {
+        justify-content: center;
+    }
+}
+
+.title {
+    flex-direction: column;
+
+    > small {
+        color: #aaa;
+    }
+}
+
+.error {
+    background-color: #ffe0e0;
+    border: 1px solid #ff9e9e;
+    border-radius: var(--radius);
+    color: #ff3939;
+    font-size: 1em;
+    padding: 14px;
+    text-align: center;
+}
+
+.login {
+    button {
+        background-color: #eee;
+        color: #333;
+        justify-content: center;
+    }
+}
+
+.separator {
+    flex-grow: 1;
+}

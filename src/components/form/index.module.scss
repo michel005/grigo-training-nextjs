@@ -1,0 +1,13 @@
+.form {
+    flex-direction: column;
+    gap: 21px;
+}
+
+.formRow {
+    flex-direction: row;
+    gap: 21px;
+
+    > div {
+        flex-grow: 1;
+    }
+}

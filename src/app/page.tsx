@@ -1,4 +1,9 @@
+'use client'
+
 import style from './page.module.scss'
+import { useContext, useEffect } from 'react'
+import { UserContext } from '@/context/user/user.context'
+import { useRouter } from 'next/navigation'
 
 const Section = ({
     header,
@@ -18,6 +23,19 @@ const Section = ({
 }
 
 const HomePage = () => {
+    const { currentUser } = useContext(UserContext)
+    const router = useRouter()
+
+    useEffect(() => {
+        if (!!currentUser) {
+            router.push('/private')
+        }
+    }, [currentUser])
+
+    if (!!currentUser) {
+        return <></>
+    }
+
     return (
         <div className={style.homePage}>
             <Section

@@ -1,0 +1,104 @@
+.sidebar {
+    --sidebar-width: 250px;
+
+    background-color: var(--primary-color);
+    border-right: 1px solid #ccc;
+    flex-direction: column;
+    gap: 14px;
+    height: 100%;
+    min-width: var(--sidebar-width);
+    overflow: hidden;
+    padding: 14px;
+    position: relative;
+    transition: all 0.25s;
+    width: var(--sidebar-width);
+    z-index: 10;
+
+    > button {
+        background-color: transparent;
+
+        > div {
+            transition: all 0.25s;
+            white-space: nowrap;
+        }
+
+        &.currentOption {
+            background-color: #fff3 !important;
+        }
+    }
+}
+
+.background {
+    background-position: center;
+    background-size: auto 100%;
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transition: all 0.25s;
+    width: 100%;
+
+    &:before {
+        background: #111c;
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
+
+.grow {
+    flex-grow: 1;
+}
+
+.userOptions {
+    flex-direction: row;
+    gap: 14px;
+    justify-content: flex-end;
+
+    > button {
+        background-color: #fff3;
+        gap: 7px;
+    }
+}
+
+.showButton {
+    align-self: flex-end;
+}
+
+.hideOptionsContent {
+    --sidebar-width: 80px;
+
+    background-color: transparent;
+
+    .background {
+        opacity: 0;
+    }
+
+    .userOptions {
+        flex-direction: column;
+    }
+
+    > button {
+        color: var(--primary-color);
+        justify-content: flex-start;
+        width: 50px;
+
+        &:hover {
+            &:before {
+                background-color: #3333;
+            }
+        }
+
+        > div {
+            opacity: 0;
+        }
+
+        &.currentOption {
+            background-color: #1113 !important;
+        }
+    }
+}

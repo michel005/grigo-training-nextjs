@@ -2,7 +2,12 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 :root {
-    --primary-color: #0581ff;
+    --border-color: #8697ca;
+    --button-height: 42px;
+    --header-height: 74px;
+    --primary-color: #556282;
+    --primary-color-light: #98b0e6;
+    --primary-color-darker: #27303e;
     --radius: 7px;
 }
 
@@ -13,6 +18,14 @@
     padding: 0;
     text-decoration: none;
     user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--primary-color);
 }
 
 body {
@@ -55,6 +68,7 @@ hr {
     }
 }
 
+aside,
 button,
 div,
 header,
@@ -66,17 +80,18 @@ section {
 main {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: calc(100% - var(--header-height));
+    max-height: calc(100% - var(--header-height));
     left: 0;
-    overflow: auto;
     position: fixed;
-    top: 0;
+    top: var(--header-height);
     width: 100%;
     z-index: 0;
 }
 
 a {
     color: var(--primary-color);
+    font-size: 16px;
     transition: all 0.25s;
 
     &:hover {

@@ -2,32 +2,132 @@
 
 import { FieldLayout } from '@/components/field/layout'
 import { FieldTextType } from '@/components/field/text/index.type'
-import { useState } from 'react'
 import Button from '@/components/button'
+import { useForm } from '@/hook/form'
+import { LoginType } from '@/types/login.type'
+import { GeneralType } from '@/types/general.type'
+import { MaskUtils } from '@/utils/mask.utils'
+import { useClosestDataForm } from '@/hook/closestDataForm'
+import { useEffect, useRef } from 'react'
+import { ErrorCollection } from '@/types/error.type'
 
-export const FieldText = ({ label, icon, type }: FieldTextType) => {
-    const [value, setValue] = useState<string | null>('')
+export const FieldText = ({
+    label,
+    icon,
+    type,
+    disabled,
+    formName,
+    formField,
+    mask,
+    placeholder,
+    error,
+}: FieldTextType) => {
+    const ref = useRef<any>(null)
+    const { dataForm, errorForm } = useClosestDataForm(ref)
+
+    const formDefinition = {
+        form: dataForm || formName || 'noForm',
+        field: formField || 'someField',
+    }
+
+    const errorMessage =
+        errorForm?.type === 'collection'
+            ? (errorForm?.errors as ErrorCollection)?.[formDefinition.field]
+                  ?.message
+            : null
+
+    const generalForm = useForm<GeneralType>('general')
+    const { field, haveField, update } = useForm<LoginType>(formDefinition.form)
+
+    const value = field(formDefinition.field)
+
+    const changeValue = (value: string) => {
+        if (!value) {
+            return value
+        }
+        if (mask === 'rg') {
+            return MaskUtils.rg(value)
+        }
+        if (mask === 'cpf') {
+            return MaskUtils.cpf(value)
+        }
+        if (mask === 'cnpj') {
+            return MaskUtils.cnpj(value)
+        }
+        if (mask === 'cep') {
+            return MaskUtils.cep(value)
+        }
+        if (mask === 'date') {
+            return MaskUtils.date(value)
+        }
+        if (mask === 'time') {
+            return MaskUtils.time(value)
+        }
+        if (mask === 'phone') {
+            return MaskUtils.phone(value)
+        }
+        return value
+    }
+
+    const definePlaceholder = (): string => {
+        if (placeholder) {
+            return placeholder
+        }
+        if (mask === 'date') {
+            return '99/99/9999'
+        }
+        if (mask === 'time') {
+            return '99:99:99'
+        }
+        if (mask === 'phone') {
+            return '(99) 99999-9999'
+        }
+        return label?.toString() || ''
+    }
+
     return (
         <FieldLayout
             label={label}
-            haveValue={!!value}
+            haveValue={haveField(formDefinition.field)}
+            disabled={disabled || generalForm.form.apiStatus !== 'Online'}
             input={(setFocus) => (
                 <input
+                    ref={ref}
                     type={type}
-                    value={value || ''}
+                    value={changeValue(value) || ''}
                     onFocus={() => setFocus(true)}
                     onBlur={() => setFocus(false)}
-                    onChange={(e) =>
-                        setValue(e.target.value === '' ? null : e.target.value)
-                    }
+                    placeholder={definePlaceholder()}
+                    onChange={(event) => {
+                        const value =
+                            event.target.value === ''
+                                ? null
+                                : event.target.value
+
+                        const valueWithoutMask =
+                            mask && value
+                                ? ['date', 'time', 'phone'].includes(mask)
+                                    ? MaskUtils[mask](value)
+                                    : MaskUtils.onlyNumbers(value)
+                                : value
+
+                        update(formDefinition.field, valueWithoutMask)
+                    }}
                 />
             )}
             leftSide={icon && <Button leftIcon={icon} disabled={true} />}
             rightSide={
-                !!value && (
-                    <Button leftIcon="close" onClick={() => setValue(null)} />
+                !!value &&
+                !disabled && (
+                    <Button
+                        leftIcon="close"
+                        onClick={() => {
+                            update(formDefinition.field, '')
+                        }}
+                    />
                 )
             }
+            error={error || errorMessage}
         />
     )
 }

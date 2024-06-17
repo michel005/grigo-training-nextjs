@@ -1,0 +1,31 @@
+.background {
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    left: 0;
+    overflow: auto;
+    padding-block: 35px 60px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    > div {
+        margin-block: auto;
+    }
+}
+
+.gradient {
+    background: linear-gradient(45deg, #eee, transparent, #ccc);
+}
+
+.blur {
+    background: #3333;
+    backdrop-filter: blur(4px);
+}
+
+.transparent {
+    background: #3333;
+}

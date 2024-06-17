@@ -1,45 +1,17 @@
-.loginPage {
-    align-items: center;
-    background: linear-gradient(45deg, #eee, transparent, #ccc);
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: center;
-    position: relative;
-
-    > small {
-        color: #aaa;
-        position: absolute;
-        bottom: 14px;
-    }
-}
-
-.modal {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: var(--radius);
-    box-shadow: #ccc 0 0 14px;
-    flex-direction: column;
-    gap: 21px;
-    padding: 35px;
-
-    > hr {
-        margin-block: 14px;
-    }
-
-    > section {
-        flex-direction: column;
-        gap: 21px;
-        width: 350px;
-
-        > a {
-            text-align: right;
-        }
-    }
-}
-
 .login {
+    img {
+        align-self: center;
+        background-color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+        border-radius: 50%;
+    }
+
     button {
         justify-content: center;
+    }
+
+    a {
+        margin-top: -10px;
     }
 }
 
@@ -48,6 +20,7 @@
     border: 1px solid #ff9e9e;
     border-radius: var(--radius);
     color: #ff3939;
+    font-size: 1em;
     padding: 14px;
     text-align: center;
 }

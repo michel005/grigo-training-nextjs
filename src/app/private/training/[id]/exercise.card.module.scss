@@ -1,0 +1,58 @@
+.exerciseCard {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    box-shadow: #ccc 0 0 4px;
+    flex-direction: column;
+    gap: 14px;
+    overflow: hidden;
+    padding: 14px;
+    width: 260px;
+
+    > header {
+        flex-direction: column;
+
+        h3 {
+            cursor: pointer;
+        }
+
+        > small {
+            color: #aaa;
+        }
+    }
+
+    button {
+        justify-content: center;
+    }
+
+    &:hover {
+        .muscleGroupPicture {
+            filter: grayscale(0);
+        }
+    }
+}
+
+.labels {
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.label {
+    background-color: var(--primary-color-light);
+    border-radius: var(--radius);
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 10px;
+}
+
+.commands {
+    justify-content: flex-end;
+
+    > button {
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+    }
+}

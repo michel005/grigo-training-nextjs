@@ -1,7 +1,15 @@
 import React from 'react'
 import './global.scss'
-import Header from '@/components/header'
-import axios, { Axios } from 'axios'
+import { ConfigProvider } from '@/context/config/config.context'
+import { Metadata } from 'next'
+import { UserProvider } from '@/context/user/user.context'
+import { Main } from '@/components/main'
+import { ModalProvider } from '@/context/modal/modal.context'
+
+export const metadata: Metadata = {
+    title: 'GRIGO Training',
+    description: 'Gestão de Treinos',
+}
 
 export default function RootLayout({
     children,
@@ -10,10 +18,13 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="pt-br">
-            <body>
-                <Header />
-                <main>{children}</main>
-            </body>
+            <ModalProvider>
+                <ConfigProvider>
+                    <UserProvider>
+                        <Main>{children}</Main>
+                    </UserProvider>
+                </ConfigProvider>
+            </ModalProvider>
         </html>
     )
 }

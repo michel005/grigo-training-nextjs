@@ -1,0 +1,13 @@
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.preview {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    padding: 14px;
+}

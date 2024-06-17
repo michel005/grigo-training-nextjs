@@ -1,0 +1,51 @@
+.modal {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    box-shadow: #ccc 0 0 14px;
+    flex-direction: column;
+    gap: 21px;
+    padding: 30px;
+    width: 600px;
+    z-index: 1;
+
+    > hr {
+        margin-block: 14px;
+    }
+
+    > section {
+        flex-direction: column;
+        gap: 21px;
+
+        > a {
+            text-align: right;
+        }
+    }
+
+    &.small {
+        width: 380px;
+    }
+
+    &.medium {
+        width: 600px;
+    }
+
+    &.big {
+        width: 1000px;
+    }
+}
+
+.header {
+    flex-direction: row;
+    width: 100%;
+
+    h1 {
+        flex-grow: 1;
+    }
+
+    > button {
+        background-color: transparent;
+        color: var(--primary-color);
+        padding: 0;
+    }
+}

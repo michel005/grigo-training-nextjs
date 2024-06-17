@@ -1,12 +1,10 @@
 .header {
-    --header-height: 74px;
-
     align-items: center;
-    background-color: #111;
+    background-color: var(--primary-color-darker);
     color: #fff;
     flex-direction: row;
+    gap: 14px;
     height: var(--header-height);
-    justify-content: space-between;
     padding: 0 21px;
     position: static;
     width: 100%;
@@ -24,4 +22,37 @@
             font-size: 1.2em;
         }
     }
+
+    > button {
+        padding: 14px;
+    }
+}
+
+.space {
+    flex-grow: 1;
+}
+
+.status {
+    border-radius: var(--radius) 0 0 0;
+    bottom: 0;
+    font-size: 1em;
+    padding: 4px 10px;
+    position: fixed;
+    right: 0;
+}
+
+.userButton {
+    background-color: transparent !important;
+}
+
+.statusMaintenance {
+    background-color: #ff9933;
+}
+
+.statusOnline {
+    background-color: var(--primary-color);
+}
+
+.statusOffline {
+    background-color: red;
 }

@@ -1,0 +1,29 @@
+@keyframes rotate {
+    100% {
+        rotate: -360deg;
+    }
+}
+
+.loading {
+    align-items: center;
+    background-color: #3331;
+    backdrop-filter: blur(4px);
+    font-size: 5em;
+    font-weight: normal;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+
+    > div {
+        height: 100%;
+    }
+
+    > i {
+        animation: rotate 2s infinite linear;
+        font-size: 1.4em;
+    }
+}

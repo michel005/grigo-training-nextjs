@@ -1,0 +1,15 @@
+.buttonGroup {
+    background-color: #fff;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--radius);
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: var(--button-height);
+    overflow: hidden;
+
+    > button {
+        border-radius: 0;
+        flex-grow: 1;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,11 @@
+.private {
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 21px;
+    padding: 21px;
+}

@@ -1,3 +1,5 @@
+'use client'
+
 import { FieldLayoutType } from '@/components/field/layout/index.type'
 import style from './index.module.scss'
 import { useState } from 'react'
@@ -11,12 +13,14 @@ export const FieldLayout = ({
     info,
     error,
     haveValue = false,
+    disabled = false,
 }: FieldLayoutType) => {
     const [focus, setFocus] = useState<boolean>(false)
     return (
         <div
             className={clsx(
                 style.fieldLayout,
+                disabled && style.disabled,
                 focus && style.focus,
                 haveValue && style.haveValue
             )}
@@ -30,7 +34,7 @@ export const FieldLayout = ({
                 {input && (
                     <div className={style.input}>
                         {label && <label>{label}</label>}
-                        {input?.(setFocus, focus)}
+                        {input?.(setFocus, focus, disabled)}
                     </div>
                 )}
                 {rightSide && (
@@ -40,7 +44,7 @@ export const FieldLayout = ({
                 )}
             </div>
             {info && <small>{info}</small>}
-            {error && <small>{error}</small>}
+            {error && <small className={style.error}>{error}</small>}
         </div>
     )
 }

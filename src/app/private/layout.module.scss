@@ -1,0 +1,15 @@
+.layout {
+    flex-direction: row;
+    height: 100%;
+
+    > section {
+        background-color: #eee;
+        flex-direction: row;
+        flex-grow: 1;
+        position: relative;
+
+        > div {
+            flex-grow: 1;
+        }
+    }
+}

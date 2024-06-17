@@ -1,0 +1,56 @@
+.trainingCard {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    box-shadow: #ccc 0 0 4px;
+    flex-direction: column;
+    gap: 14px;
+    height: 350px;
+    overflow: hidden;
+    padding: 14px;
+    width: 260px;
+
+    > header {
+        flex-direction: column;
+
+        h3 {
+            cursor: pointer;
+        }
+
+        > small {
+            color: #aaa;
+        }
+    }
+
+    button {
+        justify-content: center;
+    }
+
+    &:hover {
+        .muscleGroupPicture {
+            filter: grayscale(0);
+        }
+    }
+}
+
+.muscleGroupPicture {
+    background-color: var(--primary-color);
+    filter: grayscale(1);
+    height: 140px;
+    margin: -14px -14px 0;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.25s;
+}
+
+.labels {
+    align-items: flex-end;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: flex-start;
+    gap: 10px;
+
+    > span {
+        align-self: flex-start;
+    }
+}

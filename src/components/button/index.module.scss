@@ -1,6 +1,4 @@
 .button {
-    --button-height: 42px;
-
     align-items: center;
     background-color: var(--primary-color);
     border: none;
@@ -11,7 +9,7 @@
     font-size: 14px;
     gap: 14px;
     height: var(--button-height);
-    overflow: auto;
+    overflow: hidden;
     padding-inline: 17px;
     position: relative;
 
@@ -86,4 +84,17 @@
 
 .insideButton {
     flex-direction: row;
+}
+
+.ghost {
+    background-color: transparent;
+    color: #333;
+
+    &::before {
+        background-color: #1111;
+    }
+
+    .loading {
+        color: #333;
+    }
 }

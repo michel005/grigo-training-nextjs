@@ -1,0 +1,28 @@
+.private {
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.content {
+    flex-direction: column;
+    gap: 21px;
+    padding: 21px;
+    overflow: auto;
+    max-width: 100%;
+}
+
+.contentInside {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 21px;
+
+    > h1 {
+        margin-bottom: -14px;
+    }
+}
+
+.statusSection {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 21px;
+}

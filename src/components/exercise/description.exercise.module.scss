@@ -1,0 +1,14 @@
+.description {
+    flex-direction: column;
+    flex-grow: 1;
+
+    li {
+        color: #888;
+        font-size: 0.9em;
+        margin-inline-start: 21px;
+
+        b {
+            color: #666;
+        }
+    }
+}
