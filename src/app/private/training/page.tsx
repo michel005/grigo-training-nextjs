@@ -6,7 +6,6 @@ import { useAPI } from '@/hook/api'
 import { TrainingType } from '@/types/training.type'
 import Button from '@/components/button'
 import PageHeader from '@/components/pageHeader'
-import { PaginationType } from '@/types/pagination.type'
 import { ModalContext } from '@/context/modal/modal.context'
 import { DateUtils } from '@/utils/date.utils'
 import { Business } from '@/business'
@@ -26,7 +25,7 @@ const TrainingPage = () => {
         <div className={style.private}>
             <PageHeader icon="list" header="Treinos">
                 <Button
-                    leftIcon="add"
+                    icon="add"
                     onClick={() =>
                         open(
                             'training',
@@ -44,7 +43,7 @@ const TrainingPage = () => {
                     Novo Treino
                 </Button>
                 <Button
-                    leftIcon="sync"
+                    icon="sync"
                     forceLoading={trainingApi.status === 'RUNNING'}
                     onClick={() => trainingApi.reset()}
                 />
@@ -54,6 +53,10 @@ const TrainingPage = () => {
                     const allTrainings = trainingApi.response?.filter(
                         (x) => x.status === status
                     )
+                    if ((allTrainings || []).length === 0) {
+                        return <></>
+                    }
+
                     return (
                         <div key={status} className={style.contentInside}>
                             <h1>{TrainingStatusDefinition[status]}</h1>

@@ -9,8 +9,8 @@ import { GeneralType } from '@/types/general.type'
 const Button = ({
     className,
     children,
-    leftIcon,
-    rightIcon,
+    icon,
+    bag,
     disabled,
     onClick,
     onAsyncClick,
@@ -26,6 +26,7 @@ const Button = ({
     return (
         <button
             {...props}
+            title={children?.toString()}
             disabled={disableState}
             className={clsx(
                 className,
@@ -35,32 +36,21 @@ const Button = ({
                 (loading || forceLoading) && style.loadingState
             )}
             onClick={
-                generalForm.form.apiStatus !== 'Online'
-                    ? () => {
-                          if (generalForm.form.apiStatus == 'Offline') {
-                              alert('Nosso site esta offline no momento')
-                          }
-                          if (generalForm.form.apiStatus == 'Maintenance') {
-                              alert(
-                                  'Estamos realizando uma manutenção. Aguarde um momento e tente novamente.'
-                              )
-                          }
-                      }
-                    : !!onClick
-                      ? onClick
-                      : !!onAsyncClick
-                        ? () => {
-                              setLoading(true)
-                              onAsyncClick?.().finally(() => {
-                                  setLoading(false)
-                              })
-                          }
-                        : undefined
+                !!onClick
+                    ? onClick
+                    : !!onAsyncClick
+                      ? () => {
+                            setLoading(true)
+                            onAsyncClick?.().finally(() => {
+                                setLoading(false)
+                            })
+                        }
+                      : undefined
             }
         >
-            {leftIcon && <Icon icon={leftIcon} />}
+            {icon && <Icon icon={icon} />}
             {children && <div className={style.insideButton}>{children}</div>}
-            {rightIcon && <Icon icon={rightIcon} />}
+            {bag && <span className={style.bag}>{bag}</span>}
             {(loading || forceLoading) && (
                 <div className={style.loading}>
                     <Icon icon="sync" />

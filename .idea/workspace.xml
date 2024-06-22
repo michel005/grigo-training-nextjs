@@ -5,125 +5,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9b80eda-aecf-4a3f-aa71-2ef6f96fc127" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/avatar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/private/execution/page.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/private/execution/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/private/layout.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/private/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/private/myUser/page.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/private/myUser/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/private/page.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/private/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/private/report/page.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/private/report/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/private/settings/page.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/private/settings/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/private/training/[id]/exercise.card.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/private/training/[id]/exercise.card.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/private/training/[id]/page.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/private/training/[id]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/private/training/page.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/private/training/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/private/training/training.card.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/private/training/training.card.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/recover/page.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/recover/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/signin/page.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/signin/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/business/abstract.business.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/business/exercise.business.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/business/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/business/training.business.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/background/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/background/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/background/index.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/buttonGroup/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/buttonGroup/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/buttonGroup/index.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/exercise/description.exercise.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/exercise/description.exercise.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/form/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/form/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/form/index.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/label/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/label/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/label/index.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/loading/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/loading/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/main/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/modal/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/modal/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/modal/index.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/pageHeader/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/pageHeader/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/pageHeader/index.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sidebar/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sidebar/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/exercise.type.definition.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/sidebar.definition.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/sidebar.definition.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/training.muscleGroup.definition.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/training.status.definition.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/context/config/config.context.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/context/config/config.context.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/context/modal/modal.context.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/context/modal/modal.context.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/context/user/user.context.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/context/user/user.context.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hook/api/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hook/api/index.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hook/closestDataForm/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hook/form/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hook/form/index.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hook/message/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hook/message/index.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modal/exercise/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modal/exercise/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modal/message/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modal/message/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modal/training/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modal/training/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/error.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/exercise.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/general.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/login.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/pagination.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/recover.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/training.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/user.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/async.utils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/date.utils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/mask.utils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/session.utils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/time.utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/meu-bazar-online-nextjs.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/alert/index.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/alert/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/alert/index.type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/field/fake/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/field/fake/index.type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/constants/training.muscleGroup.image.definition.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/page.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/private/layout.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/layout.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/private/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/private/myUser/page.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/myUser/page.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/private/myUser/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/myUser/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/private/training/[id]/exercise.card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/[id]/exercise.card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/private/training/[id]/page.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/[id]/page.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/private/training/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/private/training/page.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/page.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/private/training/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/private/training/training.card.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/training.card.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/private/training/training.card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/training.card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/recover/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/recover/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/signin/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/signin/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/background/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/background/index.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/background/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/background/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/background/index.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/background/index.type.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/button/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/index.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/button/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/button/index.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/index.type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/buttonGroup/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/buttonGroup/index.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/exercise/description.exercise.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/exercise/description.exercise.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/exercise/description.exercise.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/exercise/description.exercise.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/field/layout/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/field/layout/index.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/field/layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/field/layout/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/field/layout/index.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/field/layout/index.type.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/field/text/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/field/text/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/field/text/index.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/field/text/index.type.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/index.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/form/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/icon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icon/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/settings/AxiosSettings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings/axios.settings.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/GoogleIcon.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/googleIcon.type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/label/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/label/index.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/index.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal/index.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/index.type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pageHeader/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pageHeader/index.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pageHeader/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pageHeader/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/index.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/config/config.context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/config/config.context.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/config/config.context.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/config/config.context.type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/modal/modal.context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/modal/modal.context.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/modal/modal.context.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/modal/modal.context.type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/user/user.context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/user/user.context.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modal/exercise/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modal/exercise/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modal/message/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modal/message/index.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modal/message/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modal/message/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modal/training/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modal/training/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/training.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/training.type.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,10 +69,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
         <option value="SCSS File" />
+        <option value="TypeScript File" />
       </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="false" />
+    <option name="myAllFileTypesSelected" value="true" />
+    <option name="mySelectedFileTypes">
+      <set />
     </option>
   </component>
   <component name="Git.Settings">
@@ -165,6 +107,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
+    "npm.dev.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "D:\\Dev\\grigo-training-nextjs\\node_modules\\prettier",
     "settings.editor.selected.configurable": "settings.javascript.prettier",
     "ts.external.directory.path": "D:\\Dev\\grigo-training-nextjs\\node_modules\\typescript\\lib",
@@ -174,10 +117,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Dev\grigo-training-nextjs\src\components" />
+      <recent name="D:\Dev\grigo-training-nextjs\src\components\field" />
+      <recent name="$PROJECT_DIR$/src/components/field" />
       <recent name="D:\Dev\grigo-training-nextjs\src\business" />
       <recent name="D:\Dev\grigo-training-nextjs\src\hook" />
-      <recent name="D:\Dev\grigo-training-nextjs\src\modal" />
-      <recent name="D:\Dev\grigo-training-nextjs\src\app\private" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Dev\grigo-training-nextjs\src\app\private\training" />
@@ -185,6 +128,19 @@
       <recent name="D:\Dev\grigo-training-nextjs\src\app\private" />
       <recent name="D:\Dev\grigo-training-nextjs\public" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <package-manager value="npm" />
+      <envs />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -211,6 +167,14 @@
       <workItem from="1718511722862" duration="4325000" />
       <workItem from="1718556078160" duration="2537000" />
       <workItem from="1718576365196" duration="14186000" />
+      <workItem from="1718744486142" duration="136000" />
+      <workItem from="1718775422874" duration="8348000" />
+      <workItem from="1718830143290" duration="8020000" />
+      <workItem from="1718855651345" duration="1616000" />
+      <workItem from="1718857555245" duration="1060000" />
+      <workItem from="1718909465434" duration="3169000" />
+      <workItem from="1719003361083" duration="10106000" />
+      <workItem from="1719032058754" duration="6144000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,23 @@
+.alert {
+    border-radius: var(--radius);
+    font-size: 14px;
+    padding: 14px;
+}
+
+.error {
+    background-color: #ffecec;
+    color: #ff4242;
+    outline: 1px solid #ff8888;
+}
+
+.info {
+    background-color: #eee;
+    color: #777;
+    outline: 1px solid #aaa;
+}
+
+.success {
+    background-color: #bfcabf;
+    color: #00aa00;
+    outline: 1px solid #006600;
+}

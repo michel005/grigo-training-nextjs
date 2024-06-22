@@ -3,9 +3,9 @@ import { useContext } from 'react'
 import { ModalContext } from '@/context/modal/modal.context'
 import style from '@/app/private/training/[id]/exercise.card.module.scss'
 import { ExerciseTypeDefinition } from '@/constants/exercise.type.definition'
-import { TimeUtils } from '@/utils/time.utils'
 import Button from '@/components/button'
 import { DescriptionExercise } from '@/components/exercise/description.exercise'
+import Label from '@/components/label'
 
 export const ExerciseCard = ({
     exercise,
@@ -33,13 +33,11 @@ export const ExerciseCard = ({
                 {exercise.observation && <small>{exercise.observation}</small>}
             </header>
             <div className={style.labels}>
-                <span className={style.label}>
-                    {ExerciseTypeDefinition[exercise.type as any]}
-                </span>
+                <Label>{ExerciseTypeDefinition[exercise.type as any]}</Label>
             </div>
             <DescriptionExercise exercise={exercise} />
             <div className={style.commands}>
-                <Button leftIcon="play_arrow" />
+                <Button icon="play_arrow" />
             </div>
         </div>
     )

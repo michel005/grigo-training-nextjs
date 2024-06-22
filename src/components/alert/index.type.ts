@@ -1,10 +1,9 @@
 import React from 'react'
 
-export interface BackgroundType
+export interface AlertType
     extends React.DetailedHTMLProps<
         React.HTMLAttributes<HTMLDivElement>,
         HTMLDivElement
     > {
-    zIndex?: number
-    variant?: 'gradient' | 'blur' | 'transparent'
+    variant?: 'error' | 'info' | 'success'
 }

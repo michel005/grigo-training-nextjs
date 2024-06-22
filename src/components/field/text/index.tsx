@@ -5,10 +5,9 @@ import { FieldTextType } from '@/components/field/text/index.type'
 import Button from '@/components/button'
 import { useForm } from '@/hook/form'
 import { LoginType } from '@/types/login.type'
-import { GeneralType } from '@/types/general.type'
 import { MaskUtils } from '@/utils/mask.utils'
 import { useClosestDataForm } from '@/hook/closestDataForm'
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { ErrorCollection } from '@/types/error.type'
 
 export const FieldText = ({
@@ -36,7 +35,6 @@ export const FieldText = ({
                   ?.message
             : null
 
-    const generalForm = useForm<GeneralType>('general')
     const { field, haveField, update } = useForm<LoginType>(formDefinition.form)
 
     const value = field(formDefinition.field)
@@ -73,6 +71,12 @@ export const FieldText = ({
         if (placeholder) {
             return placeholder
         }
+        if (mask === 'cpf') {
+            return '999.999.999-99'
+        }
+        if (mask === 'cnpj') {
+            return '99.999.999-9999.99'
+        }
         if (mask === 'date') {
             return '99/99/9999'
         }
@@ -89,7 +93,7 @@ export const FieldText = ({
         <FieldLayout
             label={label}
             haveValue={haveField(formDefinition.field)}
-            disabled={disabled || generalForm.form.apiStatus !== 'Online'}
+            disabled={disabled}
             input={(setFocus) => (
                 <input
                     ref={ref}
@@ -107,7 +111,7 @@ export const FieldText = ({
                         const valueWithoutMask =
                             mask && value
                                 ? ['date', 'time', 'phone'].includes(mask)
-                                    ? MaskUtils[mask](value)
+                                    ? (MaskUtils as any)[mask as any](value)
                                     : MaskUtils.onlyNumbers(value)
                                 : value
 
@@ -115,12 +119,12 @@ export const FieldText = ({
                     }}
                 />
             )}
-            leftSide={icon && <Button leftIcon={icon} disabled={true} />}
+            leftSide={icon && <Button icon={icon} disabled={true} />}
             rightSide={
                 !!value &&
                 !disabled && (
                     <Button
-                        leftIcon="close"
+                        icon="close"
                         onClick={() => {
                             update(formDefinition.field, '')
                         }}

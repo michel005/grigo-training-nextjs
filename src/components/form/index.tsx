@@ -3,8 +3,16 @@ import { clsx } from 'clsx'
 import { FormType } from '@/components/form/index.type'
 import { useEffect } from 'react'
 import { useForm } from '@/hook/form'
+import { ErrorUnitType } from '@/types/error.type'
+import Alert from '@/components/alert'
 
-export const Form = ({ formName, className, errors, ...props }: FormType) => {
+export const Form = ({
+    formName,
+    className,
+    errors,
+    children,
+    ...props
+}: FormType) => {
     const form = useForm<any>(formName || '')
 
     useEffect(() => {
@@ -19,7 +27,15 @@ export const Form = ({ formName, className, errors, ...props }: FormType) => {
             className={clsx(style.form, className)}
             data-form={formName}
             data-errors={JSON.stringify(errors)}
-        />
+        >
+            {children}
+            {errors?.type === 'single' &&
+                (errors.errors as ErrorUnitType)?.message && (
+                    <Alert variant="error">
+                        {(errors.errors as ErrorUnitType)?.message}
+                    </Alert>
+                )}
+        </div>
     )
 }
 

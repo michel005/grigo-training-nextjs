@@ -55,7 +55,7 @@ const LoginPage = () => {
                     </small>
                 )}
                 <Button
-                    leftIcon="login"
+                    icon="login"
                     onAsyncClick={async () => await loginClickHandler()}
                 >
                     Entrar
@@ -65,7 +65,7 @@ const LoginPage = () => {
             <hr data-text="Ainda não tem uma conta?" />
             <section className={style.signin}>
                 <Button
-                    leftIcon="person"
+                    icon="person"
                     onClick={() => {
                         router.push('/signin')
                     }}

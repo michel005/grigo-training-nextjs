@@ -14,6 +14,7 @@ export const FieldLayout = ({
     error,
     haveValue = false,
     disabled = false,
+    className,
 }: FieldLayoutType) => {
     const [focus, setFocus] = useState<boolean>(false)
     return (
@@ -22,7 +23,8 @@ export const FieldLayout = ({
                 style.fieldLayout,
                 disabled && style.disabled,
                 focus && style.focus,
-                haveValue && style.haveValue
+                haveValue && style.haveValue,
+                className
             )}
         >
             <div className={clsx(style.content)}>

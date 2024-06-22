@@ -43,6 +43,21 @@
     }
 }
 
+.bag {
+    align-items: center;
+    background-color: #fffa;
+    border-radius: 50%;
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    font-size: 0.6em;
+    font-weight: bold;
+    height: 20px;
+    justify-content: center;
+    padding: 0 0 1px 0;
+    width: 20px;
+}
+
 .disabled {
     pointer-events: none;
     filter: grayscale(1);
@@ -84,6 +99,26 @@
 
 .insideButton {
     flex-direction: row;
+    flex-grow: 1;
+    pointer-events: none;
+}
+
+.secondary {
+    background-color: #1111;
+    color: #333;
+
+    &::before {
+        background-color: #1111;
+    }
+
+    .loading {
+        color: #333;
+    }
+
+    .bag {
+        background-color: #1112;
+        color: #333;
+    }
 }
 
 .ghost {
@@ -95,6 +130,11 @@
     }
 
     .loading {
+        color: #333;
+    }
+
+    .bag {
+        background-color: #1112;
         color: #333;
     }
 }

@@ -8,7 +8,7 @@ import { TrainingType } from '@/types/training.type'
 import PageHeader from '@/components/pageHeader'
 import Button from '@/components/button'
 import Loading from '@/components/loading'
-import { useContext, useEffect } from 'react'
+import { CSSProperties, useContext, useEffect } from 'react'
 import { useForm } from '@/hook/form'
 import { ModalContext } from '@/context/modal/modal.context'
 import { ExerciseType } from '@/types/exercise.type'
@@ -17,6 +17,8 @@ import Icon from '@/components/icon'
 import Link from 'next/link'
 import Label from '@/components/label'
 import { TrainingMuscleGroupDefinition } from '@/constants/training.muscleGroup.definition'
+import { TrainingMuscleGroupImageDefinition } from '@/constants/training.muscleGroup.image.definition'
+import { clsx } from 'clsx'
 
 const TrainingExercisePage = ({ params }: { params: { id: string } }) => {
     const { id } = params
@@ -59,25 +61,29 @@ const TrainingExercisePage = ({ params }: { params: { id: string } }) => {
         return <Loading />
     }
 
+    const pictures =
+        formApi.response?.muscle_group
+            ?.split(';')
+            ?.map((x) => TrainingMuscleGroupImageDefinition[x]) || []
+
+    const pictureStyles: any = {}
+    for (let index = 0; index <= pictures.length; index++) {
+        pictureStyles[`--picture-${index + 1}`] = `url(${pictures[index]})`
+    }
+
     return (
-        <div className={style.private}>
-            <PageHeader
-                header={
-                    <>
-                        {formApi.response?.name}
-                        <Label>
-                            {
-                                TrainingMuscleGroupDefinition?.[
-                                    formApi.response?.muscle_group as any
-                                ]
-                            }
-                        </Label>
-                    </>
-                }
-                icon="file_copy"
-            >
+        <div
+            className={clsx(
+                style.private,
+                pictures?.length === 1 && style.pic1,
+                pictures?.length === 2 && style.pic2,
+                pictures?.length === 3 && style.pic3
+            )}
+            style={pictureStyles as CSSProperties}
+        >
+            <PageHeader header={<>{formApi.response?.name}</>} icon="file_copy">
                 <Button
-                    leftIcon="add"
+                    icon="add"
                     onClick={() => {
                         open(
                             'exercise',
@@ -94,13 +100,22 @@ const TrainingExercisePage = ({ params }: { params: { id: string } }) => {
                     Novo Exercício
                 </Button>
                 <Button
-                    leftIcon="sync"
+                    icon="sync"
                     forceLoading={exerciseApi.status === 'RUNNING'}
                     onClick={() => {
                         exerciseApi.reset()
                     }}
                 />
             </PageHeader>
+            <div className={style.labels}>
+                {formApi.response?.muscle_group?.split(';').map((muscle) => {
+                    return (
+                        <Label key={muscle}>
+                            {TrainingMuscleGroupDefinition?.[muscle as any]}
+                        </Label>
+                    )
+                })}
+            </div>
             <section className={style.cards}>
                 {exerciseApi.response?.map((exercise) => {
                     return (

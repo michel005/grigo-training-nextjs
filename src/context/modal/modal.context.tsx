@@ -7,7 +7,10 @@ export const ModalContext = createContext<ModalContextType>({
     allModals: new Map(),
     onCloseEvents: new Map(),
     open: () => {},
-    close: () => {},
+    close: () => {
+        console.log('Close')
+    },
+    clearAll: () => {},
 })
 
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
@@ -46,6 +49,11 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
         })
     }
 
+    const clearAll = () => {
+        setModals(new Map())
+        setOnCloseEvent(new Map())
+    }
+
     return (
         <ModalContext.Provider
             value={{
@@ -53,6 +61,7 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
                 onCloseEvents: onCloseEvent,
                 open,
                 close,
+                clearAll,
             }}
         >
             {children}

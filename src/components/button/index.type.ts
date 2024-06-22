@@ -1,5 +1,5 @@
 import { GoogleIconType } from '@/types/googleIcon.type'
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 export interface ButtonType
     extends React.DetailedHTMLProps<
@@ -7,8 +7,8 @@ export interface ButtonType
         HTMLButtonElement
     > {
     forceLoading?: boolean
-    leftIcon?: GoogleIconType
-    rightIcon?: GoogleIconType
+    icon?: GoogleIconType
+    bag?: ReactNode
     onAsyncClick?: () => Promise<void>
-    variant?: 'primary' | 'ghost'
+    variant?: 'primary' | 'secondary' | 'ghost'
 }

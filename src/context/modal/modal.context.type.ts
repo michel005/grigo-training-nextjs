@@ -8,4 +8,5 @@ export interface ModalContextType {
         onClose?: () => void
     ) => void
     close: (screen: string, type: string) => void
+    clearAll: () => void
 }

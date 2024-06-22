@@ -31,6 +31,7 @@
         .input {
             > label {
                 background-color: #fff;
+                color: var(--primary-color);
                 font-size: 0.8em;
                 top: -3px;
             }
@@ -69,7 +70,7 @@
 .content {
     border-radius: var(--radius);
     flex-direction: row;
-    height: var(--field-layout-height);
+    min-height: var(--field-layout-height);
     outline: 1px solid var(--primary-color);
     transition: all 0.25s;
 
@@ -83,6 +84,7 @@
     position: relative;
 
     > label {
+        border-radius: 4px;
         color: #aaa;
         font-size: 1em;
         left: 12px;
@@ -95,7 +97,8 @@
     }
 
     > input,
-    > select {
+    > select,
+    > .fakeInput {
         background-color: transparent;
         border: none;
         border-radius: var(--radius);

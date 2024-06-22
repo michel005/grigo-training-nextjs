@@ -52,16 +52,13 @@ const RecoverPage = () => {
                 </div>
                 <FieldText label="E-mail" formField="email" />
                 <FieldText label="Telefone" formField="phone" mask="phone" />
-                <Button
-                    leftIcon="person_add"
-                    onAsyncClick={createUserClickHandler}
-                >
+                <Button icon="person_add" onAsyncClick={createUserClickHandler}>
                     Enviar Instruções de Recuperação
                 </Button>
             </Form>
             <section className={style.returnToLogin}>
                 <Button
-                    leftIcon="login"
+                    icon="login"
                     onClick={() => {
                         router.push('/login')
                     }}

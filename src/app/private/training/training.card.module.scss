@@ -2,55 +2,141 @@
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: var(--radius);
-    box-shadow: #ccc 0 0 4px;
     flex-direction: column;
-    gap: 14px;
-    height: 350px;
+    justify-content: space-between;
     overflow: hidden;
-    padding: 14px;
+    transition: all 0.25s;
     width: 260px;
 
-    > header {
-        flex-direction: column;
+    &:hover {
+        border-color: #aaa;
+        box-shadow: #ccc 0 0 14px;
 
-        h3 {
-            cursor: pointer;
+        .buttons {
+            opacity: 1;
         }
+    }
 
-        > small {
-            color: #aaa;
+    &.COMPLETED,
+    &.ARCHIVED {
+        filter: grayscale(1);
+        opacity: 0.5;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.content {
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 14px;
+    padding: 14px;
+
+    ul {
+        color: #999;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        font-size: 0.8em;
+        justify-content: flex-start;
+        margin-left: 17px;
+
+        &:after {
+            content: '';
+            flex-grow: 1;
+            height: 100%;
         }
     }
 
     button {
         justify-content: center;
     }
+}
 
-    &:hover {
-        .muscleGroupPicture {
-            filter: grayscale(0);
-        }
-    }
+.lastItem {
+    opacity: 0.5;
+}
+
+.description {
+    flex-direction: column;
 }
 
 .muscleGroupPicture {
     background-color: var(--primary-color);
-    filter: grayscale(1);
-    height: 140px;
-    margin: -14px -14px 0;
-    object-fit: cover;
-    object-position: center;
+    border-radius: var(--radius) var(--radius) 0 0;
+    flex-direction: row;
+    height: 130px;
+    min-height: 130px;
+    position: relative;
     transition: all 0.25s;
+
+    img {
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+    }
+
+    h3 {
+        background: linear-gradient(45deg, #000, transparent);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
+        padding: 14px;
+        width: 100%;
+        z-index: 1;
+
+        > a {
+            color: #fff;
+        }
+    }
 }
 
 .labels {
     align-items: flex-end;
     flex-direction: row;
-    flex-grow: 1;
+    flex-wrap: wrap;
+    gap: 4px 7px;
     justify-content: flex-start;
-    gap: 10px;
+}
 
-    > span {
-        align-self: flex-start;
+.buttons {
+    flex-direction: column;
+    gap: 7px;
+    opacity: 0;
+    padding: 7px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all 0.25s;
+    z-index: 2;
+
+    button {
+        background-color: #fff9;
+        border-radius: var(--radius);
+        color: var(--primary-color);
+        gap: 7px;
+        height: auto;
+        padding: 4px;
+        transition: all 0.25s;
+
+        > div {
+            display: none;
+        }
+
+        &:hover {
+            background-color: #fff;
+
+            &:before {
+                background-color: transparent;
+            }
+        }
     }
 }

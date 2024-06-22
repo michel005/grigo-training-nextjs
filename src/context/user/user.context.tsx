@@ -1,6 +1,12 @@
 'use client'
 
-import { createContext, ReactNode, useEffect, useState } from 'react'
+import {
+    createContext,
+    ReactNode,
+    useContext,
+    useEffect,
+    useState,
+} from 'react'
 import {
     LoginResponseType,
     UserContextType,
@@ -9,6 +15,8 @@ import { UserType } from '@/types/user.type'
 import { LoginType } from '@/types/login.type'
 import { API } from '@/settings/axios.settings'
 import { LOCAL_STORAGE_TOKEN, SessionUtils } from '@/utils/session.utils'
+import { ConfigContext } from '@/context/config/config.context'
+import { ModalContext } from '@/context/modal/modal.context'
 
 export const UserContext = createContext<UserContextType>({
     status: 'IDLE',
@@ -19,6 +27,8 @@ export const UserContext = createContext<UserContextType>({
 })
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
+    const { clearAll: clearAllConfigs } = useContext(ConfigContext)
+    const { clearAll: clearAllModals } = useContext(ModalContext)
     const [currentUser, setCurrentUser] = useState<UserType | null>(null)
     const [status, setStatus] = useState<UserContextType['status']>('IDLE')
 
@@ -30,11 +40,15 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
 
         setCurrentUser(response.data.user)
         localStorage.setItem(LOCAL_STORAGE_TOKEN, response.data.token)
+        clearAllConfigs()
+        clearAllModals()
     }
 
     const logout = async () => {
         setCurrentUser(null)
         localStorage.removeItem(LOCAL_STORAGE_TOKEN)
+        clearAllConfigs()
+        clearAllModals()
     }
 
     const me = async () => {

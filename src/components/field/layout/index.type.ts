@@ -13,4 +13,5 @@ export interface FieldLayoutType {
     error?: React.ReactNode
     haveValue?: boolean
     disabled?: boolean
+    className?: string
 }

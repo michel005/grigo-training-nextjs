@@ -9,4 +9,5 @@ export interface ModalType {
     header?: React.ReactNode
     onClose?: () => void
     size?: 'small' | 'medium' | 'big'
+    zIndex?: number
 }

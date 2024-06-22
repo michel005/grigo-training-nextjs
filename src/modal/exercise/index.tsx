@@ -19,6 +19,7 @@ import { FieldLayout } from '@/components/field/layout'
 import { useMessage } from '@/hook/message'
 import { Business } from '@/business'
 import { DescriptionExercise } from '@/components/exercise/description.exercise'
+import { FieldChoices } from '@/components/field/choices'
 
 export const ExerciseModal = () => {
     const { allModals, close } = useContext(ModalContext)
@@ -96,34 +97,31 @@ export const ExerciseModal = () => {
                 close('exercise', 'form')
             }}
             backgroundVariant="blur"
+            size="big"
         >
             <Form formName="exerciseForm" errors={error}>
-                <FieldText label="Nome do Exercício" formField="name" />
-                <FieldText label="Observação" formField="observation" />
+                <FormRow>
+                    <FieldText label="Nome do Exercício" formField="name" />
+                    <FieldText label="Observação" formField="observation" />
+                </FormRow>
                 <FieldText
                     label="Tempo de Descanso"
                     formField="rest_time"
                     mask="time"
                 />
-                <ButtonGroup>
-                    {Object.keys(ExerciseTypeDefinition).map((type) => {
-                        return (
-                            <Button
-                                key={type}
-                                variant={
-                                    exerciseForm.form?.type === type
-                                        ? 'primary'
-                                        : 'ghost'
-                                }
-                                onClick={() => {
-                                    exerciseForm.update('type', type)
-                                }}
-                            >
-                                {ExerciseTypeDefinition[type]}
-                            </Button>
+                <FieldChoices
+                    label="Tipo de Treino"
+                    formField="type"
+                    options={
+                        new Map(
+                            Object.keys(ExerciseTypeDefinition).map((type) => [
+                                type,
+                                ExerciseTypeDefinition[type],
+                            ])
                         )
-                    })}
-                </ButtonGroup>
+                    }
+                    type="SINGLE"
+                />
                 {exerciseForm.form?.type === 'TIME' && (
                     <>
                         <FieldText
@@ -178,16 +176,18 @@ export const ExerciseModal = () => {
                     </>
                 )}
             </Form>
-            <div className={style.preview}>
-                <DescriptionExercise exercise={exerciseForm.form as any} />
-            </div>
+            {exerciseForm.form?.type && (
+                <div className={style.preview}>
+                    <DescriptionExercise exercise={exerciseForm.form as any} />
+                </div>
+            )}
             <div className={style.buttons}>
-                <Button leftIcon="save" onAsyncClick={saveTrainingClickHandler}>
+                <Button icon="save" onAsyncClick={saveTrainingClickHandler}>
                     Salvar
                 </Button>
                 {exerciseForm.form?.id && (
                     <Button
-                        leftIcon="delete"
+                        icon="delete"
                         onAsyncClick={removeTrainingClickHandler}
                         variant="ghost"
                     >

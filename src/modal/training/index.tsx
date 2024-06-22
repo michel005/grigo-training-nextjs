@@ -1,7 +1,7 @@
 'use client'
 
 import { Modal } from '@/components/modal'
-import { Form, FormRow } from '@/components/form'
+import { Form } from '@/components/form'
 import { FieldText } from '@/components/field/text'
 import { useContext, useEffect, useState } from 'react'
 import { ModalContext } from '@/context/modal/modal.context'
@@ -12,6 +12,8 @@ import { ErrorType } from '@/types/error.type'
 import style from './index.module.scss'
 import { Business } from '@/business'
 import { useMessage } from '@/hook/message'
+import { TrainingMuscleGroupDefinition } from '@/constants/training.muscleGroup.definition'
+import { FieldChoices } from '@/components/field/choices'
 
 export const TrainingModal = () => {
     const { allModals, close } = useContext(ModalContext)
@@ -26,8 +28,6 @@ export const TrainingModal = () => {
                     id: trainingForm.form?.id,
                     entity: {
                         name: trainingForm.form?.name,
-                        start_date: trainingForm.form?.start_date,
-                        end_date: trainingForm.form?.end_date,
                         muscle_group: trainingForm.form?.muscle_group,
                     },
                 })
@@ -35,8 +35,6 @@ export const TrainingModal = () => {
                 await Business.training.create({
                     entity: {
                         name: trainingForm.form?.name,
-                        start_date: trainingForm.form?.start_date,
-                        end_date: trainingForm.form?.end_date,
                         muscle_group: trainingForm.form?.muscle_group,
                     },
                 })
@@ -76,30 +74,29 @@ export const TrainingModal = () => {
                 close('training', 'form')
             }}
             backgroundVariant="blur"
+            size="medium"
         >
             <Form formName="trainingForm" errors={error}>
-                <FormRow>
-                    <FieldText
-                        label="Data de Início"
-                        formField="start_date"
-                        mask="date"
-                    />
-                    <FieldText
-                        label="Data de Término"
-                        formField="end_date"
-                        mask="date"
-                    />
-                </FormRow>
                 <FieldText label="Nome do Treino" formField="name" />
-                <FieldText label="Grupo Muscular" formField="muscle_group" />
+                <FieldChoices
+                    label="Grupo Muscular"
+                    formField="muscle_group"
+                    options={
+                        new Map(
+                            Object.keys(TrainingMuscleGroupDefinition).map(
+                                (x) => [x, TrainingMuscleGroupDefinition[x]]
+                            )
+                        )
+                    }
+                />
             </Form>
             <div className={style.buttons}>
-                <Button leftIcon="save" onAsyncClick={saveTrainingClickHandler}>
+                <Button icon="save" onAsyncClick={saveTrainingClickHandler}>
                     Salvar
                 </Button>
                 {trainingForm.form?.id && (
                     <Button
-                        leftIcon="delete"
+                        icon="delete"
                         onAsyncClick={removeTrainingClickHandler}
                         variant="ghost"
                     >

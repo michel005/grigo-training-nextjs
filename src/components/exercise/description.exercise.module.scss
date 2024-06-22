@@ -6,6 +6,11 @@
         color: #888;
         font-size: 0.9em;
         margin-inline-start: 21px;
+        margin-bottom: 7px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
 
         b {
             color: #666;

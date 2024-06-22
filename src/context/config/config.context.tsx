@@ -9,20 +9,13 @@ import {
 export const ConfigContext = createContext<ConfigContextType>({
     value: () => ({}) as any,
     update: () => {},
-    updatePrev: () => null,
+    clearAll: () => {},
+    updatePrev: () => {},
 })
 
 export const ConfigProvider = ({ children }: { children: ReactNode }) => {
     const [forms, setForms] = useState(
-        new Map<string, ConfigContextFormType>([
-            [
-                'general',
-                {
-                    apiStatus: 'Online',
-                    apiPingErrorCount: 0,
-                },
-            ],
-        ])
+        new Map<string, ConfigContextFormType>([])
     )
 
     const value = (form: string) => {
@@ -48,8 +41,12 @@ export const ConfigProvider = ({ children }: { children: ReactNode }) => {
         })
     }
 
+    const clearAll = () => {
+        setForms(new Map())
+    }
+
     return (
-        <ConfigContext.Provider value={{ value, update, updatePrev }}>
+        <ConfigContext.Provider value={{ value, update, updatePrev, clearAll }}>
             {children}
         </ConfigContext.Provider>
     )

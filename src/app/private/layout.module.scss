@@ -6,10 +6,12 @@
         background-color: #eee;
         flex-direction: row;
         flex-grow: 1;
-        position: relative;
 
         > div {
             flex-grow: 1;
+            gap: 14px;
+            overflow: auto;
+            padding: 0 14px 14px;
         }
     }
 }

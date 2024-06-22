@@ -26,7 +26,7 @@ const Header = () => {
                     <>
                         {!currentUser ? (
                             <Button
-                                leftIcon="login"
+                                icon="login"
                                 onClick={() => {
                                     router.push('/login')
                                 }}
@@ -36,14 +36,14 @@ const Header = () => {
                         ) : (
                             <>
                                 <Button
-                                    leftIcon="person"
+                                    icon="person"
                                     className={style.userButton}
                                     disabled={true}
                                 >
                                     {currentUser?.full_name}
                                 </Button>
                                 <Button
-                                    leftIcon="logout"
+                                    icon="logout"
                                     onClick={() => {
                                         message.question(
                                             'Saindo de sua conta',

@@ -80,16 +80,13 @@ const SignInPage = () => {
                     placeholder="Use letras, números e caracteres especiais"
                 />
                 <div className={style.separator} />
-                <Button
-                    leftIcon="person_add"
-                    onAsyncClick={createUserClickHandler}
-                >
+                <Button icon="person_add" onAsyncClick={createUserClickHandler}>
                     Cadastrar
                 </Button>
             </Form>
             <hr data-text="Já possui um usuário?" />
             <section className={style.login}>
-                <Button leftIcon="login" onClick={() => router.push('/login')}>
+                <Button icon="login" onClick={() => router.push('/login')}>
                     Entrar
                 </Button>
             </section>

@@ -23,10 +23,7 @@ export const Modal = ({
                         {header && <h1>{header}</h1>}
 
                         {onClose && (
-                            <Button
-                                leftIcon="close"
-                                onClick={() => onClose()}
-                            />
+                            <Button icon="close" onClick={() => onClose()} />
                         )}
                     </div>
                 )}

@@ -11,13 +11,13 @@ const PageHeader = ({
     ...props
 }: PageHeaderType) => {
     return (
-        <div {...props} className={clsx(style.pageHeader, className)}>
+        <header {...props} className={clsx(style.pageHeader, className)}>
             <h1>
                 {icon && <Icon icon={icon} />}
                 {header}
             </h1>
             <div className={style.commands}>{children}</div>
-        </div>
+        </header>
     )
 }
 

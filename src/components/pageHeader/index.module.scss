@@ -1,23 +1,31 @@
 .pageHeader {
     align-items: center;
-    background-color: #fff;
-    box-shadow: #ccc 0 0 4px;
+    background-color: #1119;
+    backdrop-filter: blur(14px);
+    border-radius: var(--radius);
     flex-direction: row;
     gap: 14px;
-    height: calc(var(--button-height) + 28px);
-    min-height: calc(var(--button-height) + 28px);
-    padding: 14px 21px;
+    height: 70px;
+    margin-bottom: 14px;
+    padding: 14px 17px;
+    position: sticky;
+    top: 14px;
+    left: 0;
     width: 100%;
+    z-index: 10;
 
     h1 {
+        color: #fff;
         display: flex;
         flex-direction: row;
         flex-grow: 1;
         gap: 14px;
+        z-index: 2;
     }
 }
 
 .commands {
     flex-direction: row;
     gap: 14px;
+    z-index: 2;
 }

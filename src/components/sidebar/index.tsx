@@ -22,7 +22,7 @@ const SidebarOption = ({
 
     return (
         <Button
-            leftIcon={icon}
+            icon={icon}
             onClick={() => {
                 router.push(`/private${path}`)
             }}
@@ -42,12 +42,7 @@ const Sidebar = () => {
         <aside
             className={clsx(style.sidebar, !show && style.hideOptionsContent)}
         >
-            <div
-                className={style.background}
-                style={{
-                    backgroundImage: `url(https://i.pinimg.com/564x/3f/6d/9b/3f6d9bd2c86f6a46e8436aa3d271694c.jpg)`,
-                }}
-            />
+            <div className={style.background} />
             {Object.keys(SidebarDefinition).map((pageString) => {
                 const page = SidebarDefinition[pageString]
                 return (
@@ -61,7 +56,7 @@ const Sidebar = () => {
             })}
             <div className={style.grow} />
             <Button
-                leftIcon={show ? 'menu_open' : 'menu'}
+                icon={show ? 'menu_open' : 'menu'}
                 className={style.showButton}
                 onClick={() => {
                     setShow((x) => !x)

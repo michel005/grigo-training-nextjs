@@ -19,12 +19,13 @@ export const MessageModal = () => {
             }}
             backgroundVariant="blur"
             classNameBackground={style.modal}
+            size="medium"
         >
             <p>{content}</p>
             <div className={style.buttons}>
                 {onConfirm && (
                     <Button
-                        leftIcon="check"
+                        icon="check"
                         onClick={() => {
                             onConfirm?.()
                             close('message', 'message')
@@ -34,7 +35,7 @@ export const MessageModal = () => {
                     </Button>
                 )}
                 <Button
-                    leftIcon="close"
+                    icon="close"
                     onClick={() => {
                         close('message', 'message')
                     }}

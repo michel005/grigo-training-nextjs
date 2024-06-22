@@ -1,6 +1,7 @@
 .label {
     align-self: center;
-    background-color: var(--primary-color-light);
+    background-color: #3339;
+    backdrop-filter: blur(4px);
     border-radius: var(--radius);
     color: #fff;
     font-size: 12px;

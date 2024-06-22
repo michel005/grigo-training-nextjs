@@ -36,9 +36,9 @@ const Layout = ({
             <section>
                 {children}
 
-                {allModals.get('message.message') && <MessageModal />}
                 {allModals.get('training.form') && <TrainingModal />}
                 {allModals.get('exercise.form') && <ExerciseModal />}
+                {allModals.get('message.message') && <MessageModal />}
             </section>
         </div>
     )
