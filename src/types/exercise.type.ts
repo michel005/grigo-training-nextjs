@@ -7,6 +7,7 @@ export interface ExerciseType {
     drops?: number
     repetitions?: number
     exercise_time?: string
+    execution_order?: number
     rest_time?: string
     training_id?: string
 }

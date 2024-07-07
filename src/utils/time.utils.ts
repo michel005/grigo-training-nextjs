@@ -35,4 +35,14 @@ export class TimeUtils {
         }
         return result[0]
     }
+
+    static reducedLiteralName = (time: string = '00:00:00') => {
+        return this.literalTime(time)
+            .replace(' horas', 'h')
+            .replace(' hora', 'h')
+            .replace(' minutos', 'min')
+            .replace(' minuto', 'min')
+            .replace(' segundos', 's')
+            .replace(' segundo', 's')
+    }
 }

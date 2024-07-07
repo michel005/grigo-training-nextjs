@@ -1,18 +1,46 @@
-.muscleGroup {
+.fieldChoices {
     label {
         z-index: 10;
     }
 }
 
-.muscleGroupButtons {
+.fieldChoicesButtons {
     border: none !important;
     flex-grow: 1;
 
     > button {
         min-width: 120px;
+    }
 
-        > div {
-            justify-content: center;
+    &.HORIZONTAL {
+        flex-direction: row;
+    }
+
+    &.VERTICAL {
+        flex-direction: column;
+    }
+
+    &.LEFT {
+        > button {
+            > div {
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    &.CENTER {
+        > button {
+            > div {
+                justify-content: center;
+            }
+        }
+    }
+
+    &.RIGHT {
+        > button {
+            > div {
+                justify-content: flex-end;
+            }
         }
     }
 }

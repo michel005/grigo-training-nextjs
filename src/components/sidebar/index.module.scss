@@ -1,24 +1,39 @@
 .sidebar {
-    --sidebar-width: 250px;
-
+    --button-height: 52px;
     background-color: var(--primary-color);
-    border-right: 1px solid #ccc;
+    flex-direction: row;
+}
+
+.menu {
+    background-color: #0002;
     flex-direction: column;
-    gap: 14px;
-    height: 100%;
-    min-width: var(--sidebar-width);
-    overflow: hidden;
-    padding: 14px;
-    position: relative;
-    transition: all 0.25s;
-    width: var(--sidebar-width);
-    z-index: 10;
+    gap: 10px;
+    padding: 10px;
+    transition: all 0.15s;
+    z-index: 2;
+
+    > hr {
+        &:before {
+            background-color: #fff3;
+        }
+    }
 
     > button {
+        align-items: center;
         background-color: transparent;
+        justify-content: center;
+        padding: 0;
+        width: var(--button-height);
 
         &:hover {
             backdrop-filter: blur(4px);
+        }
+
+        > span {
+            background-color: transparent;
+            position: absolute;
+            height: 100%;
+            width: 100%;
         }
 
         > div {
@@ -32,26 +47,81 @@
     }
 }
 
-.background {
-    background-image: url(https://i.pinimg.com/564x/3f/6d/9b/3f6d9bd2c86f6a46e8436aa3d271694c.jpg);
-    background-position: center;
-    background-size: auto 100%;
-    height: 100%;
-    left: 0;
-    pointer-events: none;
+.attention {
+    background-color: red;
+    border-radius: 50%;
+    height: 10px;
     position: absolute;
-    top: 0;
-    transition: all 0.25s;
-    width: 100%;
+    right: 14px;
+    top: 14px;
+    width: 10px;
+}
 
-    &:before {
-        background: #111c;
-        content: '';
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
+.appLogo {
+    pointer-events: none;
+    width: var(--button-height);
+}
+
+.subMenu {
+    flex-direction: column;
+    gap: 10px;
+    max-width: 280px;
+    padding: 10px;
+    transition: all 0.25s;
+    width: 280px;
+    z-index: 1;
+
+    > button {
+        --button-height: 40px;
+
+        background-color: #fff3;
+        white-space: nowrap;
+
+        &[data-variant='secondary'] {
+            background-color: #fff1;
+            color: #fff;
+        }
+
+        &[data-variant='ghost'] {
+            background-color: transparent;
+            color: #fff;
+        }
+    }
+
+    hr {
+        &::before {
+            background-color: #fff3;
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        color: #fff;
+        margin-bottom: -4px;
+        margin-top: 10px;
+        white-space: nowrap;
+    }
+}
+
+.appName {
+    color: #fff;
+    flex-direction: column;
+    gap: 4px;
+    height: var(--button-height);
+    justify-content: center;
+    margin-bottom: 28px;
+    min-height: var(--button-height);
+
+    h3 {
+        color: inherit;
+        white-space: nowrap;
+    }
+
+    small {
+        white-space: nowrap;
     }
 }
 
@@ -59,51 +129,12 @@
     flex-grow: 1;
 }
 
-.userOptions {
-    flex-direction: row;
-    gap: 14px;
-    justify-content: flex-end;
-
-    > button {
-        background-color: #fff3;
-        gap: 7px;
-    }
-}
-
-.showButton {
-    align-self: flex-end;
-}
-
 .hideOptionsContent {
-    --sidebar-width: 80px;
-
-    background-color: transparent;
-
-    .background {
+    .subMenu {
+        margin-left: -20px;
+        max-width: 0;
         opacity: 0;
-    }
-
-    .userOptions {
-        flex-direction: column;
-    }
-
-    > button {
-        color: var(--primary-color);
-        justify-content: flex-start;
-        width: 50px;
-
-        &:hover {
-            &:before {
-                background-color: #3333;
-            }
-        }
-
-        > div {
-            opacity: 0;
-        }
-
-        &.currentOption {
-            background-color: #1113 !important;
-        }
+        overflow: hidden;
+        width: 0;
     }
 }

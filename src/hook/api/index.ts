@@ -7,13 +7,17 @@ import { ErrorType } from '@/types/error.type'
 export const useAPI = <T>({
     api,
     dependencies = [],
+    firstRun = true,
 }: {
     api: () => Promise<T>
     dependencies?: any
+    firstRun?: boolean
 }): UseAPIType<T> => {
     const [response, setResponse] = useState<T | null>(null)
     const [error, setError] = useState<ErrorType | null>(null)
-    const [status, setStatus] = useState<UseAPIType<any>['status']>('IDLE')
+    const [status, setStatus] = useState<UseAPIType<any>['status']>(
+        firstRun ? 'IDLE' : 'COMPLETED'
+    )
 
     useEffect(() => {
         if (status === 'IDLE') {

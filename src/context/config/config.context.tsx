@@ -11,11 +11,22 @@ export const ConfigContext = createContext<ConfigContextType>({
     update: () => {},
     clearAll: () => {},
     updatePrev: () => {},
+    dragDropData: null,
+    setDragDropData: () => {},
 })
 
 export const ConfigProvider = ({ children }: { children: ReactNode }) => {
+    const [dragDropData, setDragDropData] = useState<any>(null)
     const [forms, setForms] = useState(
-        new Map<string, ConfigContextFormType>([])
+        new Map<string, ConfigContextFormType>([
+            [
+                'trainingPage',
+                {
+                    archived: false,
+                    completed: false,
+                },
+            ],
+        ])
     )
 
     const value = (form: string) => {
@@ -46,7 +57,16 @@ export const ConfigProvider = ({ children }: { children: ReactNode }) => {
     }
 
     return (
-        <ConfigContext.Provider value={{ value, update, updatePrev, clearAll }}>
+        <ConfigContext.Provider
+            value={{
+                value,
+                update,
+                updatePrev,
+                clearAll,
+                dragDropData,
+                setDragDropData,
+            }}
+        >
             {children}
         </ConfigContext.Provider>
     )

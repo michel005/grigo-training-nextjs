@@ -4,11 +4,9 @@
 :root {
     --border-color: #8697ca;
     --button-height: 42px;
-    --header-height: 74px;
-    --primary-color: #556282;
-    --primary-color-light: #98b0e6;
-    --primary-color-darker: #27303e;
-    --radius: 7px;
+    --header-height: 200px;
+    --primary-color: #6345ad;
+    --radius: 10px;
 }
 
 * {
@@ -17,7 +15,6 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
-    user-select: none;
 }
 
 h1,
@@ -80,11 +77,11 @@ section {
 main {
     display: flex;
     flex-direction: column;
-    height: calc(100% - var(--header-height));
-    max-height: calc(100% - var(--header-height));
+    height: 100%;
+    max-height: 100%;
     left: 0;
     position: fixed;
-    top: var(--header-height);
+    top: 0;
     width: 100%;
     z-index: 0;
 }

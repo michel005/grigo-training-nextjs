@@ -3,8 +3,6 @@ import style from './index.module.scss'
 import { clsx } from 'clsx'
 import Icon from '@/components/icon'
 import { useState } from 'react'
-import { useForm } from '@/hook/form'
-import { GeneralType } from '@/types/general.type'
 
 const Button = ({
     className,
@@ -18,7 +16,6 @@ const Button = ({
     variant = 'primary',
     ...props
 }: ButtonType) => {
-    const generalForm = useForm<GeneralType>('general')
     const [loading, setLoading] = useState<boolean>(false)
 
     const disableState = loading || forceLoading || disabled
@@ -26,8 +23,9 @@ const Button = ({
     return (
         <button
             {...props}
-            title={children?.toString()}
+            title={props?.title || children?.toString()}
             disabled={disableState}
+            data-variant={variant}
             className={clsx(
                 className,
                 style.button,

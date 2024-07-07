@@ -19,7 +19,7 @@ export const MessageModal = () => {
             }}
             backgroundVariant="blur"
             classNameBackground={style.modal}
-            size="medium"
+            size="small"
         >
             <p>{content}</p>
             <div className={style.buttons}>

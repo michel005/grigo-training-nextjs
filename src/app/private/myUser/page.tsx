@@ -1,40 +1,19 @@
 'use client'
 
-import style from './page.module.scss'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import { UserContext } from '@/context/user/user.context'
 import { FieldText } from '@/components/field/text'
 import { ErrorType } from '@/types/error.type'
 import { useForm } from '@/hook/form'
 import { UserType } from '@/types/user.type'
-import { API } from '@/settings/axios.settings'
-import Button from '@/components/button'
-import { Form } from '@/components/form'
-import { SessionUtils } from '@/utils/session.utils'
+import { Form, FormRow } from '@/components/form'
 import { FieldFake } from '@/components/field/fake'
+import Page from '@/components/page'
 
 const MyUserPage = () => {
     const { currentUser, me } = useContext(UserContext)
     const myUserForm = useForm<UserType>('myUser')
-    const [error, setError] = useState<ErrorType | null>(null)
-
-    const saveFormClickHandler = async () => {
-        setError(null)
-        try {
-            await API.put(
-                '/user',
-                {
-                    full_name: myUserForm.form.full_name,
-                    birthday: myUserForm.form.birthday,
-                    phone: myUserForm.form.phone,
-                },
-                SessionUtils.tokenHeader()
-            )
-            await me()
-        } catch (error: any) {
-            setError(error.response.data)
-        }
-    }
+    const myUserErrorForm = useForm<ErrorType | null>('myUserError')
 
     useEffect(() => {
         if (currentUser) {
@@ -43,28 +22,37 @@ const MyUserPage = () => {
     }, [currentUser])
 
     return (
-        <div className={style.private}>
-            <h1>Meu Usuário</h1>
-            <Form formName="myUser" errors={error}>
-                <FieldFake label="E-mail" formField="email" />
-                <FieldText
-                    label="Nome Completo"
-                    formField="full_name"
-                    placeholder="Ex: João da Silva"
-                />
-                <FieldText label="Telefone" formField="phone" mask="phone" />
-                <FieldText
-                    label="Data de Nascimento"
-                    formField="birthday"
-                    mask="date"
-                />
+        <Page
+            header={{
+                header: 'Meu Usuário',
+                pictures: [
+                    'https://saude.sesisc.org.br/wp-content/uploads/sites/13/2023/09/Beneficios-de-fazer-academia-Para-sua-saude-e-seu-corpo-scaled.jpg',
+                ],
+            }}
+        >
+            <Form formName="myUser" errors={myUserErrorForm.form}>
+                <FormRow>
+                    <FieldFake label="E-mail" formField="email" />
+                    <FieldText
+                        label="Nome Completo"
+                        formField="full_name"
+                        placeholder="Ex: João da Silva"
+                    />
+                </FormRow>
+                <FormRow>
+                    <FieldText
+                        label="Telefone"
+                        formField="phone"
+                        mask="phone"
+                    />
+                    <FieldText
+                        label="Data de Nascimento"
+                        formField="birthday"
+                        mask="date"
+                    />
+                </FormRow>
             </Form>
-            <div className={style.buttons}>
-                <Button icon="save" onAsyncClick={saveFormClickHandler}>
-                    Salvar
-                </Button>
-            </div>
-        </div>
+        </Page>
     )
 }
 

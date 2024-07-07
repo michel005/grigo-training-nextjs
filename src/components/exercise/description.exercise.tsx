@@ -49,7 +49,8 @@ export const DescriptionExercise = ({
         return (
             <ul className={style.description}>
                 <li>
-                    Executar <b>{exercise.series} séries</b>.
+                    Executar <b>{exercise.series} séries</b> com o máximo de
+                    repetições.
                 </li>
                 {exercise.rest_time && (
                     <li>

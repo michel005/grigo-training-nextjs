@@ -13,7 +13,7 @@ export const Main = ({
     const { status } = useContext(UserContext)
     return (
         <body>
-            <Header />
+            {/*<Header />*/}
             {status === 'LOADING' ? <Loading /> : <main>{children}</main>}
         </body>
     )

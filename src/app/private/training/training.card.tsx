@@ -6,49 +6,47 @@ import style from '@/app/private/training/training.card.module.scss'
 import { TrainingMuscleGroupDefinition } from '@/constants/training.muscleGroup.definition'
 import Button from '@/components/button'
 import Label from '@/components/label'
-import { API } from '@/settings/axios.settings'
-import { SessionUtils } from '@/utils/session.utils'
 import { clsx } from 'clsx'
 import { TrainingMuscleGroupImageDefinition } from '@/constants/training.muscleGroup.image.definition'
+import { TrainingBusiness } from '@/business/training.business'
+import { PageContext } from '@/context/page/page.context'
 
 export const TrainingCard = ({
     training,
-    updateApi,
+    today = false,
 }: {
     training: TrainingType
-    updateApi: () => void
+    today?: boolean
 }) => {
+    const { training: refreshTraining, pageData } = useContext(PageContext)
+    const business = new TrainingBusiness()
     const { open } = useContext(ModalContext)
     const router = useRouter()
 
-    const archive = async () => {
-        await API.put(
-            `/training/archive?id=${training.id}`,
-            null,
-            SessionUtils.tokenHeader()
-        )
+    const trainingWeekPlan = pageData?.training?.weekPlan
 
-        updateApi()
+    const includedInWeekPlan =
+        Object.keys(trainingWeekPlan)
+            .filter((x) => x !== 'id')
+            .filter((x) => (trainingWeekPlan as any)[x]?.id === training.id)
+            .length > 0
+
+    const archive = async () => {
+        await business.archive({ id: training.id })
+
+        await refreshTraining()
     }
 
     const complete = async () => {
-        await API.put(
-            `/training/complete?id=${training.id}`,
-            null,
-            SessionUtils.tokenHeader()
-        )
+        await business.complete({ id: training.id })
 
-        updateApi()
+        await refreshTraining()
     }
 
     const reopen = async () => {
-        await API.put(
-            `/training/active?id=${training.id}`,
-            null,
-            SessionUtils.tokenHeader()
-        )
+        await business.reopen({ id: training.id })
 
-        updateApi()
+        await refreshTraining()
     }
 
     return (
@@ -57,22 +55,24 @@ export const TrainingCard = ({
                 style.trainingCard,
                 style[training.status as string]
             )}
+            style={{
+                backgroundImage: `url(${
+                    TrainingMuscleGroupImageDefinition?.[
+                        training.muscle_group?.split(';')?.[0] as any
+                    ]
+                })`,
+            }}
         >
             <div className={style.muscleGroupPicture}>
-                <img
-                    src={
-                        TrainingMuscleGroupImageDefinition?.[
-                            training.muscle_group?.split(';')?.[0] as any
-                        ]
-                    }
-                />
                 <h3>{training.name}</h3>
                 <div className={style.buttons}>
                     {training.status === 'ACTIVE' ? (
                         <>
-                            <Button icon="archive" onAsyncClick={archive}>
-                                Arquivar
-                            </Button>
+                            {!includedInWeekPlan && (
+                                <Button icon="archive" onAsyncClick={archive}>
+                                    Arquivar
+                                </Button>
+                            )}
                             <Button icon="check" onAsyncClick={complete}>
                                 Concluir
                             </Button>
@@ -82,29 +82,19 @@ export const TrainingCard = ({
                             Reabrir
                         </Button>
                     )}
-                    <Button
-                        icon="edit"
-                        onClick={() => {
-                            open('training', 'form', training, () => {
-                                updateApi()
-                            })
-                        }}
-                    >
-                        Alterar
-                    </Button>
+                    {!includedInWeekPlan && (
+                        <Button
+                            icon="edit"
+                            onClick={() => {
+                                open('training', 'form', training)
+                            }}
+                        >
+                            Alterar
+                        </Button>
+                    )}
                 </div>
             </div>
             <div className={style.content}>
-                <ul>
-                    {training.exercise
-                        ?.filter((_, index) => index < 3)
-                        ?.map((exercise) => {
-                            return <li key={exercise.id}>{exercise.name}</li>
-                        })}
-                    {(training.exercise?.length || 0) > 3 && (
-                        <li className={style.lastItem}>...</li>
-                    )}
-                </ul>
                 <div className={style.labels}>
                     {training.muscle_group?.split(';').map((muscle) => {
                         return (
@@ -114,16 +104,24 @@ export const TrainingCard = ({
                         )
                     })}
                 </div>
-                <Button
-                    variant="secondary"
-                    icon="file_copy"
-                    onClick={() => {
-                        router.push(`/private/training/${training.id}`)
-                    }}
-                    bag={<span>{training.exercise?.length || 0}</span>}
-                >
-                    Exercícios
-                </Button>
+                {includedInWeekPlan ? (
+                    <>
+                        {today && (
+                            <Button icon="play_arrow">Executar Treino</Button>
+                        )}
+                    </>
+                ) : (
+                    <Button
+                        icon="file_copy"
+                        variant="primary"
+                        onClick={() => {
+                            router.push(`/private/training/${training.id}`)
+                        }}
+                        bag={<span>{training.exercise?.length || 0}</span>}
+                    >
+                        Exercícios
+                    </Button>
+                )}
             </div>
         </div>
     )

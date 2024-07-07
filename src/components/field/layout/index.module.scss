@@ -1,5 +1,11 @@
 .fieldLayout {
+    --content-border-color: var(--primary-color);
     --field-layout-height: 42px;
+    --label-background: transparent;
+    --label-color: #aaa;
+    --label-font-size: 1em;
+    --label-top: 50%;
+    --side-border: 1px solid #ccc;
 
     flex-direction: column;
     font-size: 14px;
@@ -7,35 +13,25 @@
     position: relative;
 
     &.focus {
-        .input {
-            > label {
-                color: var(--primary-color);
-            }
-        }
-
-        .content {
-            outline-color: var(--primary-color);
-        }
-
-        .side {
-            border-color: var(--primary-color);
-
-            button {
-                color: var(--primary-color);
-            }
-        }
+        --label-color: var(--primary-color);
+        --label-background: #fff;
     }
 
     &.focus,
     &.haveValue {
-        .input {
-            > label {
-                background-color: #fff;
-                color: var(--primary-color);
-                font-size: 0.8em;
-                top: -3px;
-            }
+        --label-background: #fff;
+        --label-color: var(--primary-color);
+        --label-font-size: 0.8em;
+        --label-top: -3px;
+        --side-border: 1px solid var(--primary-color);
 
+        .side {
+            button {
+                color: var(--primary-color);
+            }
+        }
+
+        .input {
             > input,
             > select {
                 &::placeholder {
@@ -44,25 +40,16 @@
             }
         }
     }
-}
 
-.disabled {
-    .content {
-        background-color: #eee;
-        pointer-events: none;
+    &.disabled {
+        --label-background: #fff;
 
-        .input {
-            > label {
-                background-color: transparent;
-            }
-        }
-    }
+        cursor: not-allowed !important;
 
-    &.haveValue {
-        .input {
-            > label {
-                background-color: #fff;
-            }
+        .content {
+            align-items: center;
+            background-color: #eee;
+            pointer-events: none;
         }
     }
 }
@@ -71,7 +58,7 @@
     border-radius: var(--radius);
     flex-direction: row;
     min-height: var(--field-layout-height);
-    outline: 1px solid var(--primary-color);
+    outline: var(--side-border);
     transition: all 0.25s;
 
     &:hover {
@@ -84,14 +71,15 @@
     position: relative;
 
     > label {
+        background-color: var(--label-background);
         border-radius: 4px;
-        color: #aaa;
-        font-size: 1em;
+        color: var(--label-color);
+        font-size: var(--label-font-size);
         left: 12px;
         padding-inline: 2px;
         pointer-events: none;
         position: absolute;
-        top: 50%;
+        top: var(--label-top);
         transform: translateY(-50%);
         transition: all 0.25s;
     }
@@ -112,6 +100,10 @@
             color: transparent;
             transition: all 0.25s;
         }
+    }
+
+    > select {
+        margin-right: 14px;
     }
 }
 
@@ -139,13 +131,13 @@
 }
 
 .leftSide {
-    border-right: 1px solid var(--primary-color);
+    border-right: var(--side-border);
     border-radius: var(--radius) 0 0 var(--radius);
     overflow: hidden;
 }
 
 .rightSide {
-    border-left: 1px solid var(--primary-color);
+    border-left: var(--side-border);
     border-radius: 0 var(--radius) var(--radius) 0;
     overflow: hidden;
 }

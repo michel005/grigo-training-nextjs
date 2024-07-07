@@ -1,3 +1,30 @@
-.private {
-    flex-direction: column;
+.items {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 14px;
+    transition: all 0.25s;
+}
+
+.item {
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: var(--radius);
+    height: 150px;
+    justify-content: center;
+    padding: 14px;
+    transition: all 0.5s;
+    width: 150px;
+}
+
+.targetPlace {
+    background-color: #eee;
+    opacity: 0.3;
+    scale: 0.9;
+}
+
+.originPlace {
+    background-color: #ddd;
+    border: none;
+    color: transparent;
 }

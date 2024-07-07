@@ -1,26 +1,99 @@
-.private {
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-.content {
-    flex-direction: column;
-    gap: 10px;
-    max-width: 100%;
-}
-
 .contentInside {
+    background-color: #eee;
+    border-radius: var(--radius);
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 21px;
+    gap: 14px;
+    padding: 14px;
+    position: relative;
+    width: 100%;
 
-    > h1 {
-        margin-bottom: -14px;
+    &.selecting {
+        * {
+            pointer-events: none !important;
+        }
+    }
+}
+
+.noTrainingFound {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    height: 200px;
+    justify-content: center;
+    opacity: 0.5;
+    text-align: center;
+    width: 100%;
+
+    &.returnTraining {
+        background-color: #1113;
+        border-radius: var(--radius);
+        opacity: 1 !important;
     }
 }
 
 .statusSection {
+    align-items: flex-start;
     flex-direction: row;
+    flex-grow: 1;
     flex-wrap: wrap;
     gap: 14px;
+}
+
+.week {
+    flex-direction: column;
+    gap: 14px;
+    position: sticky;
+    width: 100%;
+
+    h1 {
+        margin-bottom: -14px;
+    }
+}
+
+.weekdays {
+    flex-direction: row;
+    gap: 14px;
+}
+
+.weekday {
+    background-color: #eee;
+    border-radius: var(--radius);
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 7px;
+    user-select: none;
+    width: calc(100% / 7);
+
+    > h3 {
+        font-size: 1em;
+        padding: 14px;
+        transition: all 0.25s;
+    }
+
+    > p {
+        color: #aaa;
+        min-height: 60px;
+        min-width: 60px;
+        transition: all 0.25s;
+    }
+}
+
+.trainingCardContainer {
+    height: 100%;
+    width: 100%;
+
+    > div {
+        height: 100% !important;
+        flex-grow: 1;
+        width: 100%;
+    }
+}
+
+.currentWeekday {
+    background-color: var(--primary-color);
+
+    > h3 {
+        color: #fff;
+    }
 }

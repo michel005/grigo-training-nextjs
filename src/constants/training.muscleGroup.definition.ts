@@ -6,4 +6,5 @@ export const TrainingMuscleGroupDefinition: any = {
     SHOULDERS: 'Ombro',
     LEGS: 'Perna',
     ABS: 'Abdômen',
+    GLUTES: 'Glúteo',
 }

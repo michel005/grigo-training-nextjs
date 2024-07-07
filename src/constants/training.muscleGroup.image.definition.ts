@@ -8,4 +8,5 @@ export const TrainingMuscleGroupImageDefinition: any = {
     SHOULDERS:
         'https://i.pinimg.com/564x/fb/ea/17/fbea177513f72649a185ef035c86a02b.jpg',
     ABS: 'https://i.pinimg.com/564x/f8/b7/3f/f8b73f7bc9e20d7b9622444b30e35cf4.jpg',
+    GLUTES: 'https://i.pinimg.com/564x/ff/e6/55/ffe655512ed797edbf4305e5bd2534cd.jpg',
 }

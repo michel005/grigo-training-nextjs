@@ -4,11 +4,11 @@ import style from './page.module.scss'
 import { FieldText } from '@/components/field/text'
 import Button from '@/components/button'
 import Link from 'next/link'
-import { useContext, useEffect, useMemo, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useForm } from '@/hook/form'
 import { LoginType } from '@/types/login.type'
 import { useRouter } from 'next/navigation'
-import { ErrorCollection, ErrorType } from '@/types/error.type'
+import { ErrorType } from '@/types/error.type'
 import { Modal } from '@/components/modal'
 import Image from 'next/image'
 import AvatarPicture from '../../../public/avatar.png'
@@ -49,11 +49,6 @@ const LoginPage = () => {
                 />
                 <FieldText label="E-mail" formField="email" />
                 <FieldText label="Senha" formField="password" type="password" />
-                {error && error.type === 'single' && (
-                    <small className={style.error}>
-                        {error.errors.message as string}
-                    </small>
-                )}
                 <Button
                     icon="login"
                     onAsyncClick={async () => await loginClickHandler()}

@@ -10,6 +10,7 @@ import { ErrorCollection } from '@/types/error.type'
 import ButtonGroup from '@/components/buttonGroup'
 import style from './index.module.scss'
 import { FieldChoicesType } from '@/components/field/choices/index.type'
+import { clsx } from 'clsx'
 
 export const FieldChoices = ({
     label,
@@ -19,6 +20,8 @@ export const FieldChoices = ({
     options,
     error,
     type = 'MULTIPLE',
+    orientation = 'HORIZONTAL',
+    alignment = 'CENTER',
 }: FieldChoicesType) => {
     const ref = useRef<any>(null)
     const { dataForm, errorForm } = useClosestDataForm(ref)
@@ -44,11 +47,17 @@ export const FieldChoices = ({
                 label={label}
                 haveValue={true}
                 disabled={disabled}
-                className={style.muscleGroup}
+                className={style.fieldChoices}
                 input={() => (
                     <Fragment>
                         <button ref={ref} style={{ display: 'none' }} />
-                        <ButtonGroup className={style.muscleGroupButtons}>
+                        <ButtonGroup
+                            className={clsx(
+                                style.fieldChoicesButtons,
+                                style[orientation],
+                                style[alignment]
+                            )}
+                        >
                             {Array.from(
                                 options?.keys() || new Map().keys()
                             ).map((key) => {
@@ -79,11 +88,17 @@ export const FieldChoices = ({
             label={label}
             haveValue={true}
             disabled={disabled}
-            className={style.muscleGroup}
+            className={style.fieldChoices}
             input={() => (
                 <Fragment>
                     <button ref={ref} style={{ display: 'none' }} />
-                    <ButtonGroup className={style.muscleGroupButtons}>
+                    <ButtonGroup
+                        className={clsx(
+                            style.fieldChoicesButtons,
+                            style[orientation],
+                            style[alignment]
+                        )}
+                    >
                         {Array.from(options?.keys() || new Map().keys()).map(
                             (key) => {
                                 return (

@@ -1,19 +1,34 @@
 .trainingCard {
     background-color: #fff;
-    border: 1px solid #ccc;
+    background-position: center;
+    background-size: cover;
     border-radius: var(--radius);
     flex-direction: column;
+    height: 240px;
     justify-content: space-between;
-    overflow: hidden;
+    position: relative;
     transition: all 0.25s;
-    width: 260px;
+    width: 240px;
+
+    &::before {
+        background-color: #1119;
+        border-radius: var(--radius);
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transition: all 0.25s;
+        width: 100%;
+    }
 
     &:hover {
         border-color: #aaa;
-        box-shadow: #ccc 0 0 14px;
+        box-shadow: #999 0 0 14px;
 
-        .buttons {
-            opacity: 1;
+        &::before {
+            background-color: #111c;
+            backdrop-filter: blur(10px);
         }
     }
 
@@ -28,68 +43,21 @@
     }
 }
 
-.content {
-    flex-direction: column;
-    flex-grow: 1;
-    gap: 14px;
-    padding: 14px;
-
-    ul {
-        color: #999;
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        font-size: 0.8em;
-        justify-content: flex-start;
-        margin-left: 17px;
-
-        &:after {
-            content: '';
-            flex-grow: 1;
-            height: 100%;
-        }
-    }
-
-    button {
-        justify-content: center;
-    }
-}
-
-.lastItem {
-    opacity: 0.5;
-}
-
-.description {
-    flex-direction: column;
-}
-
 .muscleGroupPicture {
-    background-color: var(--primary-color);
-    border-radius: var(--radius) var(--radius) 0 0;
     flex-direction: row;
-    height: 130px;
-    min-height: 130px;
+    flex-grow: 1;
+    height: 100px;
     position: relative;
     transition: all 0.25s;
-
-    img {
-        height: 100%;
-        left: 0;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: 0;
-    }
+    width: 100%;
 
     h3 {
-        background: linear-gradient(45deg, #000, transparent);
         color: #fff;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         height: 100%;
-        padding: 14px;
+        padding: 7px 7px 0;
         width: 100%;
         z-index: 1;
 
@@ -99,19 +67,43 @@
     }
 }
 
+.content {
+    background-color: #fff9;
+    backdrop-filter: blur(4px);
+    border-radius: var(--radius);
+    flex-direction: column;
+    gap: 7px;
+    justify-content: flex-end;
+    margin: 7px;
+    padding: 7px;
+    transition: all 0.25s;
+    z-index: 1;
+
+    button {
+        justify-content: center;
+    }
+}
+
+.description {
+    flex-direction: column;
+}
+
 .labels {
-    align-items: flex-end;
-    flex-direction: row;
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 4px 7px;
     justify-content: flex-start;
+
+    > span {
+        font-size: 0.6em;
+        text-align: center;
+    }
 }
 
 .buttons {
-    flex-direction: column;
+    flex-direction: row;
     gap: 7px;
-    opacity: 0;
-    padding: 7px;
+    padding: 14px;
     position: absolute;
     right: 0;
     top: 0;
@@ -119,9 +111,9 @@
     z-index: 2;
 
     button {
-        background-color: #fff9;
+        background-color: transparent;
         border-radius: var(--radius);
-        color: var(--primary-color);
+        color: #fff;
         gap: 7px;
         height: auto;
         padding: 4px;
@@ -129,14 +121,6 @@
 
         > div {
             display: none;
-        }
-
-        &:hover {
-            background-color: #fff;
-
-            &:before {
-                background-color: transparent;
-            }
         }
     }
 }

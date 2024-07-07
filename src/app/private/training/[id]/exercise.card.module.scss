@@ -2,18 +2,33 @@
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: var(--radius);
-    box-shadow: #ccc 0 0 4px;
     flex-direction: column;
     gap: 14px;
-    overflow: hidden;
     padding: 14px;
     width: 260px;
+    position: relative;
+
+    * {
+        pointer-events: none;
+    }
 
     > header {
         flex-direction: column;
 
-        h3 {
-            cursor: pointer;
+        button {
+            align-self: flex-start;
+            background-color: transparent;
+            color: var(--primary-color);
+            height: auto;
+            font-size: 1.1em;
+            justify-items: flex-start;
+            text-align: left;
+            padding: 0;
+            pointer-events: auto;
+
+            * {
+                pointer-events: auto;
+            }
         }
 
         > small {
@@ -40,7 +55,7 @@
 }
 
 .label {
-    background-color: var(--primary-color-light);
+    background-color: var(--primary-color);
     border-radius: var(--radius);
     color: #fff;
     font-size: 12px;

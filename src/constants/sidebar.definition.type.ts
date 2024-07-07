@@ -5,5 +5,8 @@ export interface SidebarDefinitionType {
         icon: GoogleIconType
         label: string
         path: string
+        childs?: string[]
+        sidebar?: any
+        hide?: boolean
     }
 }

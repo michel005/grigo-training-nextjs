@@ -1,5 +1,5 @@
 export const TrainingStatusDefinition: any = {
-    ACTIVE: 'Ativo',
+    ACTIVE: 'Backlog',
     ARCHIVED: 'Arquivado',
     COMPLETED: 'Concluído',
 }

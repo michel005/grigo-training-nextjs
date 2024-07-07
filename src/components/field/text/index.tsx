@@ -7,8 +7,9 @@ import { useForm } from '@/hook/form'
 import { LoginType } from '@/types/login.type'
 import { MaskUtils } from '@/utils/mask.utils'
 import { useClosestDataForm } from '@/hook/closestDataForm'
-import { useRef } from 'react'
+import { useMemo, useRef } from 'react'
 import { ErrorCollection } from '@/types/error.type'
+import style from './index.module.scss'
 
 export const FieldText = ({
     label,
@@ -20,22 +21,29 @@ export const FieldText = ({
     mask,
     placeholder,
     error,
+    alignment,
 }: FieldTextType) => {
     const ref = useRef<any>(null)
     const { dataForm, errorForm } = useClosestDataForm(ref)
 
-    const formDefinition = {
-        form: dataForm || formName || 'noForm',
-        field: formField || 'someField',
-    }
-
-    const errorMessage =
-        errorForm?.type === 'collection'
-            ? (errorForm?.errors as ErrorCollection)?.[formDefinition.field]
-                  ?.message
-            : null
+    const formDefinition = useMemo(
+        () => ({
+            form: dataForm || formName || 'noForm',
+            field: formField || 'someField',
+        }),
+        [dataForm, formField, formName]
+    )
 
     const { field, haveField, update } = useForm<LoginType>(formDefinition.form)
+
+    const errorMessage = useMemo(
+        () =>
+            errorForm?.type === 'collection'
+                ? (errorForm?.errors as ErrorCollection)?.[formDefinition.field]
+                      ?.message
+                : null,
+        [errorForm?.errors, errorForm?.type, formDefinition.field]
+    )
 
     const value = field(formDefinition.field)
 
@@ -96,6 +104,7 @@ export const FieldText = ({
             disabled={disabled}
             input={(setFocus) => (
                 <input
+                    className={style[alignment as any]}
                     ref={ref}
                     type={type}
                     value={changeValue(value) || ''}

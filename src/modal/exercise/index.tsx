@@ -3,7 +3,7 @@
 import { Modal } from '@/components/modal'
 import { Form, FormRow } from '@/components/form'
 import { FieldText } from '@/components/field/text'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useMemo, useState } from 'react'
 import { ModalContext } from '@/context/modal/modal.context'
 import { useForm } from '@/hook/form'
 import { TrainingType } from '@/types/training.type'
@@ -20,12 +20,30 @@ import { useMessage } from '@/hook/message'
 import { Business } from '@/business'
 import { DescriptionExercise } from '@/components/exercise/description.exercise'
 import { FieldChoices } from '@/components/field/choices'
+import { FieldSelect } from '@/components/field/select'
+import { ExerciseDefinition } from '@/constants/exercise.definition'
+import { useAPI } from '@/hook/api'
+import { TrainingBusiness } from '@/business/training.business'
 
 export const ExerciseModal = () => {
     const { allModals, close } = useContext(ModalContext)
     const message = useMessage()
     const exerciseForm = useForm<ExerciseType | null>('exerciseForm')
     const [error, setError] = useState<ErrorType | null>()
+
+    const trainingApi = useAPI<TrainingType>({
+        api: async () => {
+            if (!exerciseForm.form?.training_id) {
+                return null
+            }
+            return await new TrainingBusiness().findById({
+                id: exerciseForm.form?.training_id as any,
+            })
+        },
+        dependencies: [exerciseForm.form?.training_id],
+    })
+
+    console.log('Execution Order', exerciseForm.form?.execution_order)
 
     const saveTrainingClickHandler = async () => {
         try {
@@ -53,6 +71,7 @@ export const ExerciseModal = () => {
                         type: exerciseForm.form?.type,
                         training_id: exerciseForm.form?.training_id,
                         exercise_time: exerciseForm.form?.exercise_time,
+                        execution_order: exerciseForm.form?.execution_order,
                         rest_time: exerciseForm.form?.rest_time,
                         series: exerciseForm.form?.series,
                         repetitions: exerciseForm.form?.repetitions,
@@ -89,6 +108,15 @@ export const ExerciseModal = () => {
         exerciseForm.updatePrev(() => allModals.get('exercise.form'))
     }, [allModals])
 
+    const allExercisesAvailable = useMemo(() => {
+        const allMuscles = trainingApi.response?.muscle_group?.split(';') || []
+        const allExercises = []
+        for (const muscle of allMuscles) {
+            allExercises.push(...ExerciseDefinition?.[muscle])
+        }
+        return allExercises
+    }, [trainingApi.response?.muscle_group])
+
     return (
         <Modal
             header="Formulário de Exercício"
@@ -100,6 +128,11 @@ export const ExerciseModal = () => {
             size="big"
         >
             <Form formName="exerciseForm" errors={error}>
+                <FieldSelect
+                    label="Exercício"
+                    formField="name"
+                    options={new Map(allExercisesAvailable.map((x) => [x, x]))}
+                />
                 <FormRow>
                     <FieldText label="Nome do Exercício" formField="name" />
                     <FieldText label="Observação" formField="observation" />

@@ -14,8 +14,11 @@ import { Business } from '@/business'
 import { useMessage } from '@/hook/message'
 import { TrainingMuscleGroupDefinition } from '@/constants/training.muscleGroup.definition'
 import { FieldChoices } from '@/components/field/choices'
+import { PageContext } from '@/context/page/page.context'
 
 export const TrainingModal = () => {
+    const { training: refreshTraining } = useContext(PageContext)
+
     const { allModals, close } = useContext(ModalContext)
     const message = useMessage()
     const trainingForm = useForm<TrainingType | null>('trainingForm')
@@ -40,6 +43,7 @@ export const TrainingModal = () => {
                 })
             }
             trainingForm.updatePrev(() => null)
+            await refreshTraining()
             close('training', 'form')
         } catch (error: any) {
             setError(error?.response?.data)
@@ -56,6 +60,7 @@ export const TrainingModal = () => {
                         id: trainingForm.form?.id,
                     })
                     .then(() => {
+                        refreshTraining()
                         close('training', 'form')
                     })
             }
@@ -81,6 +86,7 @@ export const TrainingModal = () => {
                 <FieldChoices
                     label="Grupo Muscular"
                     formField="muscle_group"
+                    orientation="VERTICAL"
                     options={
                         new Map(
                             Object.keys(TrainingMuscleGroupDefinition).map(

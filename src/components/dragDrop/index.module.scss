@@ -1,0 +1,17 @@
+.dragDrop {
+    transition: all 0.25s;
+}
+
+.hover {
+    opacity: 0.3;
+}
+
+.onlyTarget {
+    * {
+        pointer-events: none;
+
+        &.dragDrop {
+            pointer-events: auto;
+        }
+    }
+}

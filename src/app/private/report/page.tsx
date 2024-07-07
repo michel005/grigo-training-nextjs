@@ -1,12 +1,17 @@
 'use client'
 
-import style from './page.module.scss'
+import Page from '@/components/page'
 
 const ReportPage = () => {
     return (
-        <div className={style.private}>
-            <h1>Relatórios</h1>
-        </div>
+        <Page
+            header={{
+                header: 'Relatório',
+                pictures: [
+                    'https://c7fc8402.rocketcdn.me/wp-content/uploads/2024/02/como-fazer-um-relatorio.jpg',
+                ],
+            }}
+        ></Page>
     )
 }
 
