@@ -1,9 +1,9 @@
 .dragDrop {
-    transition: all 0.25s;
+    transition: opacity 0.25s;
 }
 
 .hover {
-    opacity: 0.3;
+    opacity: 0.5 !important;
 }
 
 .onlyTarget {

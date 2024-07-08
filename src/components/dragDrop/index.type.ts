@@ -37,4 +37,5 @@ export interface DragDropType
     onCancel?: (origin: any) => void
     onLeave?: () => void
     onEnd?: (origin: any, target: any) => void
+    dropValidation?: (dragDropData: any, origin: any, target: any) => boolean
 }

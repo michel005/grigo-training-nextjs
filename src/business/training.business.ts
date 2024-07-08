@@ -2,27 +2,11 @@ import { AbstractBusiness } from '@/business/abstract.business'
 import { TrainingType } from '@/types/training.type'
 import { API } from '@/settings/axios.settings'
 import { SessionUtils } from '@/utils/session.utils'
-import { TrainingWeekPlanType } from '@/types/trainingWeekPlan.type'
-import { TrainingWeekPlanExpandedType } from '@/types/trainingWeekPlan.expanded.type'
 import { TrainingPageType } from '@/types/trainingPage.type'
 
 export class TrainingBusiness extends AbstractBusiness<TrainingType> {
     constructor() {
         super('training')
-    }
-
-    public createWithModel = async ({
-        trainingModel,
-    }: {
-        trainingModel: number | null
-    }) => {
-        await API.post(
-            `/training/withModel`,
-            {
-                trainingModel,
-            },
-            SessionUtils.tokenHeader()
-        )
     }
 
     public findAll = async () => {
@@ -31,6 +15,14 @@ export class TrainingBusiness extends AbstractBusiness<TrainingType> {
             SessionUtils.tokenHeader()
         )
         return reponse.data
+    }
+
+    public duplicate = async ({ id }: { id?: string }) => {
+        await API.post(
+            `/training/duplicate?id=${id}`,
+            null,
+            SessionUtils.tokenHeader()
+        )
     }
 
     public archive = async ({ id }: { id?: string }) => {

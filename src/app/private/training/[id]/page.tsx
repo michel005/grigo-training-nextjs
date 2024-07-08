@@ -30,15 +30,30 @@ const TrainingExercisePage = ({ params }: { params: { id: string } }) => {
             ...(training?.completedTrainings || []),
             ...(training?.archivedTrainings || []),
             ...(training?.activeTrainings || []),
+            training?.weekPlan.weekday_1,
+            training?.weekPlan.weekday_2,
+            training?.weekPlan.weekday_3,
+            training?.weekPlan.weekday_4,
+            training?.weekPlan.weekday_5,
+            training?.weekPlan.weekday_6,
+            training?.weekPlan.weekday_7,
         ],
         [
             training?.activeTrainings,
             training?.archivedTrainings,
             training?.completedTrainings,
+            training?.weekPlan.weekday_1,
+            training?.weekPlan.weekday_2,
+            training?.weekPlan.weekday_3,
+            training?.weekPlan.weekday_4,
+            training?.weekPlan.weekday_5,
+            training?.weekPlan.weekday_6,
+            training?.weekPlan.weekday_7,
         ]
     )
+
     const currentTraining = useMemo(
-        () => allTrainings.find((x) => x.id === id),
+        () => allTrainings.find((x) => x?.id === id),
         [allTrainings, id]
     )
 

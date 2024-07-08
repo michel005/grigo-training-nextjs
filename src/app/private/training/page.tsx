@@ -7,14 +7,22 @@ import { TrainingStatusDefinition } from '@/constants/training.status.definition
 import Page from '@/components/page'
 import { DragDrop } from '@/components/dragDrop'
 import { clsx } from 'clsx'
-import { API } from '@/settings/axios.settings'
-import { SessionUtils } from '@/utils/session.utils'
 import { TrainingCardCollection } from '@/app/private/training/cardCollection'
 import { WeekdaysDefinition } from '@/constants/weekdays.definition'
 import { PageContext } from '@/context/page/page.context'
 import { TrainingPageType } from '@/types/trainingPage.type'
+import { Business } from '@/business'
+import Button from '@/components/button'
+import { useForm } from '@/hook/form'
 
 const TrainingPage = () => {
+    const trainingPageForm = useForm<{
+        archived: boolean
+        completed: boolean
+    }>('trainingPage', {
+        archived: true,
+        completed: true,
+    })
     const { training: refreshTraining, pageData } = useContext(PageContext)
 
     const trainingPageData = useMemo(
@@ -47,35 +55,18 @@ const TrainingPage = () => {
         if (newWeekNumber !== undefined) {
             weekDayTemp[`weekday_${newWeekNumber}`] = origin
         }
-        if (trainingPageData?.weekPlan?.id) {
-            API.put(
-                `/training_week_plan?id=${trainingPageData?.weekPlan?.id}`,
-                weekDayTemp,
-                SessionUtils.tokenHeader()
-            ).then(() => {
+        Business.trainingWeekPlan
+            .save({
+                entity: weekDayTemp,
+            })
+            .then(() => {
                 refreshTraining()
             })
-        } else {
-            API.post(
-                `/training_week_plan`,
-                weekDayTemp,
-                SessionUtils.tokenHeader()
-            ).then(() => {
-                refreshTraining()
-            })
-        }
         setSelected(null)
     }
 
     return (
-        <Page
-            header={{
-                header: 'Treinos',
-                pictures: [
-                    'https://static.vecteezy.com/system/resources/previews/026/727/087/non_2x/gym-equipment-illustration-design-landscape-free-photo.jpg',
-                ],
-            }}
-        >
+        <Page>
             <div className={style.week}>
                 <h1>Planejamento Semanal</h1>
                 <p>
@@ -100,7 +91,9 @@ const TrainingPage = () => {
                                         today && style.currentWeekday
                                     )}
                                 >
-                                    <h3>{weekDay}</h3>
+                                    <h3>
+                                        {weekDay} {today && <span>(Hoje)</span>}
+                                    </h3>
                                     {training && (
                                         <DragDrop
                                             index={training.id}
@@ -115,7 +108,7 @@ const TrainingPage = () => {
                                             onCancel={() => {
                                                 setSelected(null)
                                             }}
-                                            onEnd={(origin) => {
+                                            onEnd={() => {
                                                 setSelected(null)
                                             }}
                                             className={
@@ -133,24 +126,32 @@ const TrainingPage = () => {
                         }
 
                         return (
-                            <DragDrop
+                            <div
                                 key={weekDay}
                                 className={clsx(
                                     style.weekday,
                                     today && style.currentWeekday
                                 )}
-                                index={weekDay}
-                                group="weekday"
-                                onCancel={() => {
-                                    setSelected(null)
-                                }}
-                                onEnd={(origin, target) => {
-                                    changeWeekPlan(origin, index + 1)
-                                }}
-                                onlyTarget={true}
                             >
                                 <h3>{weekDay}</h3>
-                            </DragDrop>
+                                <DragDrop
+                                    index={weekDay}
+                                    group="weekday"
+                                    onCancel={() => {
+                                        setSelected(null)
+                                    }}
+                                    onEnd={(origin, target) => {
+                                        changeWeekPlan(origin, index + 1)
+                                    }}
+                                    onlyTarget={true}
+                                    className={clsx(
+                                        style.fakeCard,
+                                        today && style.fakeCardCurrentWeekday
+                                    )}
+                                >
+                                    <Button>Sem Treino Atribuído</Button>
+                                </DragDrop>
+                            </div>
                         )
                     })}
                 </div>
@@ -180,10 +181,7 @@ const TrainingPage = () => {
                                                 setSelected(null)
                                             }}
                                         >
-                                            <TrainingCard
-                                                key={training.id}
-                                                training={training}
-                                            />
+                                            <TrainingCard training={training} />
                                         </DragDrop>
                                     </Fragment>
                                 )
@@ -222,14 +220,18 @@ const TrainingPage = () => {
                     }}
                 />
             )}
-            <TrainingCardCollection
-                header={TrainingStatusDefinition.ARCHIVED}
-                list={trainingPageData?.archivedTrainings || []}
-            />
-            <TrainingCardCollection
-                header={TrainingStatusDefinition.COMPLETED}
-                list={trainingPageData?.completedTrainings || []}
-            />
+            {trainingPageForm.form.archived && (
+                <TrainingCardCollection
+                    header={TrainingStatusDefinition.ARCHIVED}
+                    list={trainingPageData?.archivedTrainings || []}
+                />
+            )}
+            {trainingPageForm.form.completed && (
+                <TrainingCardCollection
+                    header={TrainingStatusDefinition.COMPLETED}
+                    list={trainingPageData?.completedTrainings || []}
+                />
+            )}
         </Page>
     )
 }

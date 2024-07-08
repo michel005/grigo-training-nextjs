@@ -1,17 +1,20 @@
 .trainingCard {
     background-color: #fff;
     background-position: center;
-    background-size: cover;
+    background-size: 100%;
     border-radius: var(--radius);
     flex-direction: column;
+    gap: 4px;
     height: 240px;
     justify-content: space-between;
+    padding: 14px;
     position: relative;
     transition: all 0.25s;
     width: 240px;
 
     &::before {
-        background-color: #1119;
+        background-color: #111a;
+        backdrop-filter: blur(2px);
         border-radius: var(--radius);
         content: '';
         height: 100%;
@@ -22,12 +25,24 @@
         width: 100%;
     }
 
+    h3 {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        z-index: 1;
+
+        > a {
+            color: #fff;
+        }
+    }
+
     &:hover {
+        background-size: 120%;
         border-color: #aaa;
         box-shadow: #999 0 0 14px;
 
         &::before {
-            background-color: #111c;
             backdrop-filter: blur(10px);
         }
     }
@@ -41,29 +56,32 @@
             opacity: 1;
         }
     }
+
+    > button {
+        background-color: #fff3;
+        color: #fff;
+        transition: all 0.25s;
+
+        &:hover {
+            background-color: #fff4;
+        }
+    }
 }
 
-.muscleGroupPicture {
-    flex-direction: row;
-    flex-grow: 1;
-    height: 100px;
-    position: relative;
-    transition: all 0.25s;
-    width: 100%;
+.header {
+    flex-direction: column;
+    gap: 7px;
+    justify-content: flex-end;
+}
 
-    h3 {
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        height: 100%;
-        padding: 7px 7px 0;
-        width: 100%;
-        z-index: 1;
+.labels {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 7px;
 
-        > a {
-            color: #fff;
-        }
+    > span {
+        align-self: flex-start;
+        background-color: #fff3;
     }
 }
 
@@ -73,51 +91,21 @@
     border-radius: var(--radius);
     flex-direction: column;
     gap: 7px;
-    justify-content: flex-end;
-    margin: 7px;
     padding: 7px;
     transition: all 0.25s;
-    z-index: 1;
-
-    button {
-        justify-content: center;
-    }
-}
-
-.description {
-    flex-direction: column;
-}
-
-.labels {
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 4px 7px;
-    justify-content: flex-start;
-
-    > span {
-        font-size: 0.6em;
-        text-align: center;
-    }
 }
 
 .buttons {
-    flex-direction: row;
+    align-self: flex-end;
+    align-items: flex-end;
+    flex-grow: 1;
     gap: 7px;
-    padding: 14px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: all 0.25s;
-    z-index: 2;
 
-    button {
-        background-color: transparent;
-        border-radius: var(--radius);
-        color: #fff;
-        gap: 7px;
-        height: auto;
+    > button {
+        background-color: #fff3;
+        height: 26px;
         padding: 4px;
-        transition: all 0.25s;
+        width: 26px;
 
         > div {
             display: none;

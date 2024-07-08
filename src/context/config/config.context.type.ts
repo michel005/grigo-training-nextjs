@@ -10,6 +10,10 @@ export interface ConfigContextType {
     clearAll: () => void
     update: (form: string, prop: string, value: any) => void
     updatePrev: (form: string, value: (v: any) => any) => void
-    dragDropData: any
+    dragDropData: null | {
+        index: any
+        group: string
+        acceptTargetGroup: string[]
+    }
     setDragDropData: any
 }

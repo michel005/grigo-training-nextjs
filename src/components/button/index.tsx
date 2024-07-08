@@ -48,7 +48,7 @@ const Button = ({
         >
             {icon && <Icon icon={icon} />}
             {children && <div className={style.insideButton}>{children}</div>}
-            {bag && <span className={style.bag}>{bag}</span>}
+            {bag !== undefined && <span className={style.bag}>{bag}</span>}
             {(loading || forceLoading) && (
                 <div className={style.loading}>
                     <Icon icon="sync" />

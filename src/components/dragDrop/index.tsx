@@ -1,6 +1,6 @@
 import style from './index.module.scss'
 import { DragDropType } from '@/components/dragDrop/index.type'
-import { useContext, useState } from 'react'
+import { ReactNode, useContext, useState } from 'react'
 import { clsx } from 'clsx'
 import { ConfigContext } from '@/context/config/config.context'
 
@@ -15,6 +15,7 @@ export const DragDrop = ({
     onCancel,
     className,
     onlyTarget,
+    dropValidation = () => true,
     ...props
 }: DragDropType) => {
     const { dragDropData, setDragDropData } = useContext(ConfigContext)
@@ -40,33 +41,40 @@ export const DragDrop = ({
                 })
                 e.dataTransfer.effectAllowed = 'move'
                 e.dataTransfer.dropEffect = 'move'
+                e.dataTransfer.setDragImage(e.target as any, 14, 14)
                 onStart?.(index)
             }}
             onDragOver={(e) => {
-                const origin = e.dataTransfer.getData('index')
-                onHover?.(origin)
+                setHover(true)
                 e.preventDefault()
             }}
-            onDragLeave={(e) => {
+            onDragLeave={() => {
                 setHover(false)
-                onLeave?.()
             }}
             onDragEnd={(e) => {
                 const origin = e.dataTransfer.getData('index')
                 setHover(false)
                 onCancel?.(origin)
+                setDragDropData(null)
             }}
             onDrop={(e) => {
-                const origin = dragDropData.index
-                const acceptGroup = dragDropData.acceptTargetGroup
+                const origin = dragDropData?.index
+                const acceptGroup = dragDropData?.acceptTargetGroup
 
-                const targetGroup = (e.target as any).getAttribute('data-group')
-                const targetIndex = (e.target as any).getAttribute('data-index')
+                const targetGroup = (e.target as Element).getAttribute(
+                    'data-group'
+                )
+                const targetIndex = (e.target as Element).getAttribute(
+                    'data-index'
+                )
 
-                if (acceptGroup.includes(targetGroup)) {
+                if (
+                    acceptGroup?.includes(targetGroup || '') &&
+                    dropValidation(dragDropData, origin, targetIndex)
+                ) {
                     onEnd?.(origin, targetIndex)
-                    setHover(false)
                 }
+                setHover(false)
                 setDragDropData(null)
             }}
         />

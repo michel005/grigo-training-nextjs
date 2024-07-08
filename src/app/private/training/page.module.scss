@@ -24,12 +24,6 @@
     opacity: 0.5;
     text-align: center;
     width: 100%;
-
-    &.returnTraining {
-        background-color: #1113;
-        border-radius: var(--radius);
-        opacity: 1 !important;
-    }
 }
 
 .statusSection {
@@ -41,10 +35,10 @@
 }
 
 .week {
+    align-self: flex-start;
     flex-direction: column;
     gap: 14px;
     position: sticky;
-    width: 100%;
 
     h1 {
         margin-bottom: -14px;
@@ -52,22 +46,46 @@
 }
 
 .weekdays {
+    align-self: flex-start;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 14px;
 }
 
+.fakeCard {
+    align-items: center;
+    background: linear-gradient(135deg, #1112, #1111);
+    border-radius: var(--radius);
+    flex-grow: 1;
+    justify-content: center;
+    opacity: 1;
+    width: 240px;
+
+    > button {
+        background-color: transparent;
+        color: #0006;
+    }
+}
+
+.fakeCardCurrentWeekday {
+    > button {
+        color: #fff;
+    }
+}
+
 .weekday {
+    align-items: center;
     background-color: #eee;
     border-radius: var(--radius);
     flex-direction: column;
-    flex-grow: 1;
-    padding: 7px;
+    gap: 14px;
+    padding: 14px;
     user-select: none;
-    width: calc(100% / 7);
+    flex-grow: 1;
+    width: 300px;
 
     > h3 {
         font-size: 1em;
-        padding: 14px;
         transition: all 0.25s;
     }
 
@@ -81,13 +99,6 @@
 
 .trainingCardContainer {
     height: 100%;
-    width: 100%;
-
-    > div {
-        height: 100% !important;
-        flex-grow: 1;
-        width: 100%;
-    }
 }
 
 .currentWeekday {
@@ -95,5 +106,9 @@
 
     > h3 {
         color: #fff;
+
+        span {
+            color: #000;
+        }
     }
 }
