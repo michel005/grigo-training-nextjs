@@ -1,0 +1,19 @@
+.page {
+    flex-direction: column;
+    gap: 21px;
+}
+
+.exercise {
+    align-items: flex-start;
+    align-self: flex-start;
+    background-color: #eee;
+    border-radius: var(--radius);
+    flex-direction: column;
+    gap: 7px;
+    padding: 14px;
+
+    > p {
+        color: #aaa;
+        font-size: 1em;
+    }
+}

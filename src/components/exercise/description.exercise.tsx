@@ -125,7 +125,7 @@ export const DescriptionExercise = ({
                     </li>
                 )}
                 <li>
-                    Ao final executar mais <b>{exercise.drops} repetições</b> em{' '}
+                    Ao final executar mais <b>{exercise.drops} séries</b> em{' '}
                     <b>dropset</b> (diminuindo a carga a cada série), sem
                     descanso.
                 </li>

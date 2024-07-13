@@ -11,6 +11,7 @@ import { TrainingMuscleGroupImageDefinition } from '@/constants/training.muscleG
 import { PageContext } from '@/context/page/page.context'
 import { Business } from '@/business'
 import { useMessage } from '@/hook/message'
+import { useForm } from '@/hook/form'
 
 export const TrainingCard = ({
     training,
@@ -19,6 +20,13 @@ export const TrainingCard = ({
     training: TrainingType
     today?: boolean
 }) => {
+    const executionPageForm = useForm<{
+        weekday: string
+        training: TrainingType
+    }>('executionPage', {
+        weekday: 'Segunda Feira',
+        training: {},
+    })
     const { training: refreshTraining, pageData } = useContext(PageContext)
     const { open } = useContext(ModalContext)
     const { question } = useMessage()
@@ -130,7 +138,16 @@ export const TrainingCard = ({
                     </>
                 )}
             </div>
-            {today && <Button icon="play_arrow">Executar Treino</Button>}
+            {today && (
+                <Button
+                    icon="play_arrow"
+                    onClick={() => {
+                        router.push(`/private/training/execute`)
+                    }}
+                >
+                    Executar Treino
+                </Button>
+            )}
             <Button
                 icon="file_copy"
                 onClick={() => {

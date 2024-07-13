@@ -9,6 +9,7 @@ import { TrainingModal } from '@/modal/training'
 import { ModalContext } from '@/context/modal/modal.context'
 import { ExerciseModal } from '@/modal/exercise'
 import { MessageModal } from '@/modal/message'
+import { ExecutionModal } from '@/modal/execution'
 
 const Layout = ({
     children,
@@ -38,6 +39,7 @@ const Layout = ({
 
                 {allModals.get('training.form') && <TrainingModal />}
                 {allModals.get('exercise.form') && <ExerciseModal />}
+                {allModals.get('execution.form') && <ExecutionModal />}
                 {allModals.get('message.message') && <MessageModal />}
             </section>
         </div>

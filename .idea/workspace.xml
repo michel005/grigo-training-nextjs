@@ -5,24 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9b80eda-aecf-4a3f-aa71-2ef6f96fc127" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/business/trainingWeekPlan.business.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/sort.utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/private/training/execute/page.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/private/training/execute/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/business/execution.business.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/private/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/private/training/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/private/training/page.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/page.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/private/training/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/private/training/training.card.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/training.card.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/private/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/private/training/training.card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/training.card.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/business/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/business/training.business.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/training.business.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/button/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dragDrop/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dragDrop/index.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dragDrop/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dragDrop/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dragDrop/index.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dragDrop/index.type.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sidebar/exercise.sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/exercise.sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sidebar/training.sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/training.sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/config/config.context.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/config/config.context.type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/exercise/description.exercise.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/exercise/description.exercise.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/sidebar.definition.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/sidebar.definition.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +48,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/myFiles/Dev/grigo-training-nextjs/src/business",
+    "last_opened_file_path": "/desenv/grigo-training-nextjs/src/business",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -65,19 +56,19 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
     "npm.dev.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/myFiles/Dev/grigo-training-nextjs/node_modules/prettier",
+    "prettierjs.PrettierConfiguration.Package": "/desenv/grigo-training-nextjs/node_modules/prettier",
     "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/myFiles/Dev/grigo-training-nextjs/node_modules/typescript/lib",
+    "ts.external.directory.path": "/desenv/grigo-training-nextjs/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/business" />
+      <recent name="$PROJECT_DIR$/src/modal" />
+      <recent name="$PROJECT_DIR$/src/app/private/training" />
       <recent name="D:\Dev\grigo-training-nextjs\src\context" />
       <recent name="D:\Dev\grigo-training-nextjs\src\types" />
-      <recent name="D:\Dev\grigo-training-nextjs\src\modal" />
-      <recent name="D:\Dev\grigo-training-nextjs\src\app\private" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Dev\grigo-training-nextjs\src\app\private\training" />
@@ -157,6 +148,12 @@
       <workItem from="1720361943361" duration="621000" />
       <workItem from="1720391102351" duration="3625000" />
       <workItem from="1720409143635" duration="9753000" />
+      <workItem from="1720450430107" duration="288000" />
+      <workItem from="1720470085672" duration="3790000" />
+      <workItem from="1720481006282" duration="534000" />
+      <workItem from="1720492610703" duration="5479000" />
+      <workItem from="1720554445389" duration="172000" />
+      <workItem from="1720743720215" duration="3292000" />
     </task>
     <servers />
   </component>

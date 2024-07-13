@@ -13,8 +13,15 @@ export const SidebarDefinition: SidebarDefinitionType = {
         icon: 'list',
         label: 'Treinos',
         path: '/training',
-        childs: ['/training/[id]'],
+        childs: ['/training/[id]', '/training/execute'],
         sidebar: <TrainingSidebar />,
+    },
+    execute: {
+        icon: 'play_arrow',
+        label: 'Treinos',
+        path: '/training/execute',
+        sidebar: <TrainingSidebar />,
+        hide: true,
     },
     exercise: {
         icon: 'copy_all',
