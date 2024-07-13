@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9b80eda-aecf-4a3f-aa71-2ef6f96fc127" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/private/training/execute/page.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/private/training/execute/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/business/execution.business.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/private/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/private/training/training.card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/training.card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/business/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/exercise/description.exercise.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/exercise/description.exercise.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/private/training/execute/page.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/execute/page.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/private/training/execute/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/execute/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pageHeader/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pageHeader/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/sidebar.definition.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/sidebar.definition.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modal/execution/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modal/execution/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,24 +41,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/desenv/grigo-training-nextjs/src/business",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "npm.dev.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/desenv/grigo-training-nextjs/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/desenv/grigo-training-nextjs/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/desenv/grigo-training-nextjs/src/business&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/desenv/grigo-training-nextjs/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/desenv/grigo-training-nextjs/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/business" />
@@ -154,6 +151,7 @@
       <workItem from="1720492610703" duration="5479000" />
       <workItem from="1720554445389" duration="172000" />
       <workItem from="1720743720215" duration="3292000" />
+      <workItem from="1720837126142" duration="1394000" />
     </task>
     <servers />
   </component>

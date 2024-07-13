@@ -38,7 +38,6 @@ const TrainingExecutionPage = () => {
         <Page
             header={{
                 header: pageHeader,
-                description: <></>,
             }}
         >
             <div className={style.page}>

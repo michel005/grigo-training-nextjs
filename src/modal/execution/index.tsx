@@ -117,6 +117,7 @@ export const ExecutionModal = () => {
             <div className={style.buttons}>
                 <Button
                     icon="keyboard_arrow_left"
+                    variant="secondary"
                     disabled={current === 0}
                     onClick={() => {
                         setCurrent((x) => x - 1)
@@ -132,9 +133,7 @@ export const ExecutionModal = () => {
                             executionForm.updatePrev(() => null)
                             close('execution', 'form')
                         }}
-                    >
-                        Concluir
-                    </Button>
+                    />
                 ) : (
                     <Button
                         icon="keyboard_arrow_right"

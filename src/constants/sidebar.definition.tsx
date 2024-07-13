@@ -18,9 +18,8 @@ export const SidebarDefinition: SidebarDefinitionType = {
     },
     execute: {
         icon: 'play_arrow',
-        label: 'Treinos',
+        label: 'Execução',
         path: '/training/execute',
-        sidebar: <TrainingSidebar />,
         hide: true,
     },
     exercise: {

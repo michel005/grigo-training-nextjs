@@ -26,8 +26,8 @@ const PageHeader = ({
                     return <img key={picture} src={picture} />
                 })}
             </div>
-            <div className={style.commands}>{children}</div>
-            <h1>{header}</h1>
+            {children && <div className={style.commands}>{children}</div>}
+            {header && <h1>{header}</h1>}
             {description && (
                 <div className={style.description}>{description}</div>
             )}
