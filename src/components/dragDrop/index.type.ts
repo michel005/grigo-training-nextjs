@@ -1,4 +1,5 @@
 import React from 'react'
+import { ConfigContextType } from '@/context/config/config.context.type'
 
 type DragDropEventHandlers = {
     onDrag?: (event: DragEvent) => void
@@ -32,8 +33,9 @@ export interface DragDropType
     group: string
     acceptTargetGroup?: string[]
     index: any
+    extraData?: any
     onStart?: (origin: any) => void
-    onHover?: (target: any) => void
+    onHover?: (target: any, value: ConfigContextType['dragDropData']) => void
     onCancel?: (origin: any) => void
     onLeave?: () => void
     onEnd?: (origin: any, target: any) => void

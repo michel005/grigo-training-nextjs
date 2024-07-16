@@ -80,6 +80,11 @@
         &[data-variant='secondary'] {
             background-color: #fff1;
             color: #fff;
+
+            > span {
+                background-color: #fff6;
+                color: var(--primary-color);
+            }
         }
 
         &[data-variant='ghost'] {

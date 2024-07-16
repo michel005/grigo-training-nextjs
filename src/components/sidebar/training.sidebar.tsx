@@ -9,9 +9,11 @@ export const TrainingSidebar = () => {
     const { open } = useContext(ModalContext)
     const { pageData, training } = useContext(PageContext)
     const trainingPageForm = useForm<{
+        active: boolean
         archived: boolean
         completed: boolean
     }>('trainingPage', {
+        active: true,
         archived: true,
         completed: true,
     })
@@ -60,36 +62,45 @@ export const TrainingSidebar = () => {
             <div style={{ flexGrow: 1 }} />
             <h5>Mostrar</h5>
             <Button
+                icon="list"
+                variant={trainingPageForm.form.active ? 'primary' : 'secondary'}
+                onClick={() => {
+                    trainingPageForm.update(
+                        'active',
+                        !trainingPageForm.form.active
+                    )
+                }}
+                bag={pageData.training?.activeTrainings?.length}
+            >
+                Ativos
+            </Button>
+            <Button
                 icon="archive"
-                variant={trainingPageForm.form.archived ? 'primary' : 'ghost'}
+                variant={
+                    trainingPageForm.form.archived ? 'primary' : 'secondary'
+                }
                 onClick={() => {
                     trainingPageForm.update(
                         'archived',
                         !trainingPageForm.form.archived
                     )
                 }}
-                bag={
-                    trainingPageForm.form.archived
-                        ? pageData.training.archivedTrainings.length
-                        : undefined
-                }
+                bag={pageData.training?.archivedTrainings?.length}
             >
                 Arquivados
             </Button>
             <Button
                 icon="check"
-                variant={trainingPageForm.form.completed ? 'primary' : 'ghost'}
+                variant={
+                    trainingPageForm.form.completed ? 'primary' : 'secondary'
+                }
                 onClick={() => {
                     trainingPageForm.update(
                         'completed',
                         !trainingPageForm.form.completed
                     )
                 }}
-                bag={
-                    trainingPageForm.form.completed
-                        ? pageData.training.completedTrainings.length
-                        : undefined
-                }
+                bag={pageData.training?.completedTrainings?.length}
             >
                 Concluídos
             </Button>

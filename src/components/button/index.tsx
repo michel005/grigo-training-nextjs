@@ -27,11 +27,11 @@ const Button = ({
             disabled={disableState}
             data-variant={variant}
             className={clsx(
-                className,
                 style.button,
                 style[variant],
                 disableState && style.disabled,
-                (loading || forceLoading) && style.loadingState
+                (loading || forceLoading) && style.loadingState,
+                className
             )}
             onClick={
                 !!onClick

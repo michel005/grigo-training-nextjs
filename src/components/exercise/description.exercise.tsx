@@ -48,14 +48,21 @@ export const DescriptionExercise = ({
 
         return (
             <ul className={style.description}>
-                <li>
-                    Executar <b>{exercise.series} séries</b> com o máximo de
-                    repetições.
-                </li>
+                {exercise.exercise_time ? (
+                    <li>
+                        Executar <b>{exercise.series} séries</b> de{' '}
+                        <b>{TimeUtils.literalTime(exercise.exercise_time)}</b>.
+                    </li>
+                ) : (
+                    <li>
+                        Executar <b>{exercise.series} séries</b> com o máximo de
+                        repetições.
+                    </li>
+                )}
                 {exercise.rest_time && (
                     <li>
                         Descanse{' '}
-                        <b>{TimeUtils.literalTime(exercise.rest_time)}</b> a
+                        <b>{TimeUtils.literalTime(exercise.rest_time)}</b> após
                         cada série.
                     </li>
                 )}

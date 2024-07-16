@@ -8,6 +8,7 @@ export const DragDrop = ({
     group,
     acceptTargetGroup = [group],
     index,
+    extraData,
     onStart,
     onHover,
     onLeave,
@@ -36,6 +37,7 @@ export const DragDrop = ({
             onDragStart={(e) => {
                 setDragDropData({
                     index,
+                    extraData,
                     group,
                     acceptTargetGroup,
                 })
@@ -46,10 +48,15 @@ export const DragDrop = ({
             }}
             onDragOver={(e) => {
                 setHover(true)
+                onHover?.(
+                    (e.target as Element).getAttribute('data-index'),
+                    dragDropData
+                )
                 e.preventDefault()
             }}
             onDragLeave={() => {
                 setHover(false)
+                onLeave?.()
             }}
             onDragEnd={(e) => {
                 const origin = e.dataTransfer.getData('index')

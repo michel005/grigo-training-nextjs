@@ -6,11 +6,27 @@
   <component name="ChangeListManager">
     <list default="true" id="b9b80eda-aecf-4a3f-aa71-2ef6f96fc127" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/private/training/execute/page.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/execute/page.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/private/training/[id]/exercise.card.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/[id]/exercise.card.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/private/training/cardCollection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/cardCollection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/private/training/execute/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/execute/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pageHeader/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pageHeader/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/sidebar.definition.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/sidebar.definition.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modal/execution/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modal/execution/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/private/training/page.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/page.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/private/training/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/private/training/training.card.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/training.card.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/private/training/training.card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/private/training/training.card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/abstract.business.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/abstract.business.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/exercise.business.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/exercise.business.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/button/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dragDrop/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dragDrop/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dragDrop/index.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dragDrop/index.type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/exercise/description.exercise.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/exercise/description.exercise.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/exercise/description.exercise.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/exercise/description.exercise.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/page/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/page/index.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pageHeader/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pageHeader/index.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/index.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar/training.sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/training.sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/config/config.context.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/config/config.context.type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modal/exercise/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modal/exercise/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +71,7 @@
     &quot;npm.dev.executor&quot;: &quot;Run&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/desenv/grigo-training-nextjs/node_modules/prettier&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/desenv/grigo-training-nextjs/node_modules/typescript/lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Dev\\grigo-training-nextjs\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -90,7 +106,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.18034.50" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.17011.90" />
       </set>
     </attachedChunks>
   </component>
@@ -152,6 +168,8 @@
       <workItem from="1720554445389" duration="172000" />
       <workItem from="1720743720215" duration="3292000" />
       <workItem from="1720837126142" duration="1394000" />
+      <workItem from="1720975132495" duration="4898000" />
+      <workItem from="1721091029723" duration="13773000" />
     </task>
     <servers />
   </component>

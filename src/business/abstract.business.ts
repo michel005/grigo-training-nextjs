@@ -3,16 +3,24 @@ import { SessionUtils } from '@/utils/session.utils'
 import { PaginationType } from '@/types/pagination.type'
 
 export abstract class AbstractBusiness<T> {
-    private entityName: string
+    protected entityName: string
 
-    constructor(entityName: string) {
+    protected constructor(entityName: string) {
         this.entityName = entityName
+    }
+
+    public parseCreate = async ({ entity }: any) => {
+        return entity
+    }
+
+    public parseUpdate = async ({ entity }: any) => {
+        return entity
     }
 
     public create = async ({ entity }: { entity: T }) => {
         const response = await API.post(
             `/${this.entityName}`,
-            entity,
+            await this.parseCreate({ entity }),
             SessionUtils.tokenHeader()
         )
         return response.data
@@ -21,7 +29,7 @@ export abstract class AbstractBusiness<T> {
     public update = async ({ id, entity }: { id: string; entity: T }) => {
         const response = await API.put(
             `/${this.entityName}?id=${id}`,
-            entity,
+            await this.parseUpdate({ entity }),
             SessionUtils.tokenHeader()
         )
         return response.data

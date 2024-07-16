@@ -1,114 +1,95 @@
-.contentInside {
-    background-color: #eee;
+.card {
+    background-color: #f8f8f8;
     border-radius: var(--radius);
     flex-direction: column;
     flex-wrap: wrap;
     gap: 14px;
     padding: 14px;
-    position: relative;
-    width: 100%;
 
     &.selecting {
         * {
             pointer-events: none !important;
         }
     }
-}
 
-.noTrainingFound {
-    align-items: center;
-    display: flex;
-    flex-grow: 1;
-    height: 200px;
-    justify-content: center;
-    opacity: 0.5;
-    text-align: center;
-    width: 100%;
-}
+    .content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        gap: 14px;
 
-.statusSection {
-    align-items: flex-start;
-    flex-direction: row;
-    flex-grow: 1;
-    flex-wrap: wrap;
-    gap: 14px;
-}
-
-.week {
-    align-self: flex-start;
-    flex-direction: column;
-    gap: 14px;
-    position: sticky;
-
-    h1 {
-        margin-bottom: -14px;
+        .emptyDrop {
+            align-items: center;
+            color: var(--primary-color-8);
+            font-size: 1.2em;
+            height: 240px;
+            justify-content: center;
+            width: 100%;
+        }
     }
 }
 
+.fade {
+    opacity: 0.3;
+}
+
 .weekdays {
-    align-self: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 14px;
+
+    .weekday {
+        background-color: #fff;
+        border-radius: var(--radius);
+        box-shadow: #ccc 0 0 4px;
+        flex-direction: row;
+        flex-grow: 1;
+        min-height: 140px;
+        user-select: none;
+        width: 300px;
+        max-width: 500px;
+
+        > h3 {
+            background-color: var(--primary-color-2);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 1em;
+            padding: 14px;
+            rotate: 180deg;
+            text-align: center;
+            writing-mode: vertical-lr;
+        }
+
+        &.currentWeekday {
+            background-color: var(--primary-color-2);
+
+            > h3 {
+                background-color: var(--primary-color);
+                color: #fff;
+            }
+        }
+
+        > div {
+            width: 100%;
+        }
+    }
 }
 
 .fakeCard {
     align-items: center;
-    background: linear-gradient(135deg, #1112, #1111);
     border-radius: var(--radius);
+    color: var(--primary-color-8);
+    flex-direction: column;
     flex-grow: 1;
     justify-content: center;
-    opacity: 1;
-    width: 240px;
-
-    > button {
-        background-color: transparent;
-        color: #0006;
-    }
-}
-
-.fakeCardCurrentWeekday {
-    > button {
-        color: #fff;
-    }
-}
-
-.weekday {
-    align-items: center;
-    background-color: #eee;
-    border-radius: var(--radius);
-    flex-direction: column;
-    gap: 14px;
-    padding: 14px;
-    user-select: none;
-    flex-grow: 1;
-    width: 300px;
-
-    > h3 {
-        font-size: 1em;
-        transition: all 0.25s;
-    }
-
-    > p {
-        color: #aaa;
-        min-height: 60px;
-        min-width: 60px;
-        transition: all 0.25s;
-    }
+    width: 100%;
 }
 
 .trainingCardContainer {
-    height: 100%;
-}
+    > div {
+        border-radius: 0 var(--radius) var(--radius) 0;
 
-.currentWeekday {
-    background-color: var(--primary-color);
-
-    > h3 {
-        color: #fff;
-
-        span {
-            color: #000;
+        &::before {
+            border-radius: 0 var(--radius) var(--radius) 0;
         }
     }
 }

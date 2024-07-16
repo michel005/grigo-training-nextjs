@@ -9,6 +9,7 @@ import { DescriptionExercise } from '@/components/exercise/description.exercise'
 import style from './page.module.scss'
 import Button from '@/components/button'
 import { ModalContext } from '@/context/modal/modal.context'
+import { TrainingMuscleGroupImageDefinition } from '@/constants/training.muscleGroup.image.definition'
 
 const TrainingExecutionPage = () => {
     const { pageData } = useContext(PageContext)
@@ -34,10 +35,19 @@ const TrainingExecutionPage = () => {
         [currentTraining]
     )
 
+    const pictures = useMemo(
+        () =>
+            currentTraining?.muscle_group
+                ?.split(';')
+                ?.map((x) => TrainingMuscleGroupImageDefinition[x]) || [],
+        [currentTraining?.muscle_group]
+    )
+
     return (
         <Page
             header={{
                 header: pageHeader,
+                pictures,
             }}
         >
             <div className={style.page}>
@@ -48,10 +58,7 @@ const TrainingExecutionPage = () => {
                                 {index + 1}. {exercise.name}
                             </h3>
                             <p>{exercise.observation}</p>
-                            <DescriptionExercise
-                                exercise={exercise}
-                                key={exercise.id}
-                            />
+                            <DescriptionExercise exercise={exercise} />
                             <Button
                                 icon="play_arrow"
                                 variant="secondary"

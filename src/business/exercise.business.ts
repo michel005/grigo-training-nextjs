@@ -1,19 +1,38 @@
 import { AbstractBusiness } from '@/business/abstract.business'
 import { ExerciseType } from '@/types/exercise.type'
-import { API } from '@/settings/axios.settings'
-import { SessionUtils } from '@/utils/session.utils'
 
 export class ExerciseBusiness extends AbstractBusiness<ExerciseType> {
     constructor() {
         super('exercise')
     }
 
-    public byTraining = async ({ trainingId }: { trainingId: number }) => {
-        const response = await API.get(
-            `/exercise/all?trainingId=${trainingId}`,
-            SessionUtils.tokenHeader()
-        )
+    public parseCreate = async ({ entity }: any) => {
+        return {
+            name: entity?.name,
+            type: entity?.type,
+            training_id: entity?.training_id,
+            exercise_time: entity?.exercise_time,
+            execution_order: entity?.execution_order,
+            rest_time: entity?.rest_time,
+            series: entity?.series,
+            repetitions: entity?.repetitions,
+            drops: entity?.drops,
+            observation: entity?.observation,
+        }
+    }
 
-        return response.data as ExerciseType[]
+    public parseUpdate = async ({ entity }: any) => {
+        return {
+            name: entity?.name,
+            type: entity?.type,
+            training_id: entity?.training_id,
+            exercise_time: entity?.exercise_time,
+            execution_order: entity?.execution_order,
+            rest_time: entity?.rest_time,
+            series: entity?.series,
+            repetitions: entity?.repetitions,
+            drops: entity?.drops,
+            observation: entity?.observation,
+        }
     }
 }

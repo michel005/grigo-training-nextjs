@@ -12,6 +12,7 @@ export interface ConfigContextType {
     updatePrev: (form: string, value: (v: any) => any) => void
     dragDropData: null | {
         index: any
+        extraData: any
         group: string
         acceptTargetGroup: string[]
     }

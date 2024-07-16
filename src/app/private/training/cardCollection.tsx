@@ -19,12 +19,10 @@ export const TrainingCardCollection = ({
             return <></>
         } else {
             return (
-                <div className={style.contentInside}>
+                <div className={style.card}>
                     <h1>{header}</h1>
-                    <div className={style.statusSection}>
-                        <h3 className={style.noTrainingFound}>
-                            Nenhum Treino Disponível
-                        </h3>
+                    <div className={style.content}>
+                        <h3>Nenhum Treino Disponível</h3>
                     </div>
                 </div>
             )
@@ -32,9 +30,9 @@ export const TrainingCardCollection = ({
     }
 
     return (
-        <div className={style.contentInside}>
+        <div className={style.card}>
             <h1>{header}</h1>
-            <div className={style.statusSection}>
+            <div className={style.content}>
                 {list.map((training, index) => {
                     return (
                         <Fragment key={training.id}>

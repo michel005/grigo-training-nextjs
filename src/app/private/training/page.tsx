@@ -1,7 +1,7 @@
 'use client'
 
 import style from './page.module.scss'
-import { Fragment, useContext, useMemo, useState } from 'react'
+import { ReactNode, useContext, useMemo, useState } from 'react'
 import { TrainingCard } from '@/app/private/training/training.card'
 import { TrainingStatusDefinition } from '@/constants/training.status.definition'
 import Page from '@/components/page'
@@ -12,17 +12,45 @@ import { WeekdaysDefinition } from '@/constants/weekdays.definition'
 import { PageContext } from '@/context/page/page.context'
 import { TrainingPageType } from '@/types/trainingPage.type'
 import { Business } from '@/business'
-import Button from '@/components/button'
 import { useForm } from '@/hook/form'
+import { ConfigContext } from '@/context/config/config.context'
+
+const getDayOfWeek = () => {
+    const date = new Date()
+    let day = date.getDay()
+    day = day === 0 ? 1 : day + 1
+    return day
+}
+
+const Weekday = ({
+    weekday,
+    children,
+}: {
+    weekday: string
+    children: ReactNode
+}) => {
+    const index = WeekdaysDefinition.findIndex((x) => x === weekday)
+    const today = getDayOfWeek() === index + 1
+
+    return (
+        <div className={clsx(style.weekday, today && style.currentWeekday)}>
+            <h3>{weekday}</h3>
+            {children}
+        </div>
+    )
+}
 
 const TrainingPage = () => {
     const trainingPageForm = useForm<{
+        active: boolean
         archived: boolean
         completed: boolean
     }>('trainingPage', {
+        active: true,
         archived: true,
         completed: true,
     })
+    const { dragDropData } = useContext(ConfigContext)
     const { training: refreshTraining, pageData } = useContext(PageContext)
 
     const trainingPageData = useMemo(
@@ -33,13 +61,9 @@ const TrainingPage = () => {
     const weekEntity = trainingPageData?.weekPlan || {}
 
     const [selected, setSelected] = useState<string | null>(null)
-
-    const getDayOfWeek = () => {
-        const date = new Date()
-        let day = date.getDay()
-        day = day === 0 ? 1 : day + 1
-        return day
-    }
+    const [trainingSelected, setTrainingSelected] = useState<string | null>(
+        null
+    )
 
     const changeWeekPlan = (origin: string, newWeekNumber?: number) => {
         const weekDayTemp: any = JSON.parse(
@@ -63,101 +87,137 @@ const TrainingPage = () => {
                 refreshTraining()
             })
         setSelected(null)
+        setTrainingSelected(null)
     }
 
     return (
-        <Page>
-            <div className={style.week}>
-                <h1>Planejamento Semanal</h1>
-                <p>
-                    Arraste seu treino para o dia da semana em que deseja
-                    executa-lo.
-                </p>
-                <div className={style.weekdays}>
-                    {WeekdaysDefinition.map((weekDay, index) => {
-                        const today = getDayOfWeek() === index + 1
-                        const weekVal =
-                            (weekEntity as any)[`weekday_${index + 1}`] || null
-                        if (weekVal !== null) {
-                            const training = (
-                                trainingPageData?.weekPlan as any
-                            )[`weekday_${index + 1}`]
-                            return (
-                                <div
-                                    key={weekDay}
+        <Page
+            header={{
+                header: 'Planejamento Semanal',
+                description: (
+                    <p>
+                        Arraste seu treino para o dia da semana em que deseja
+                        executa-lo.
+                    </p>
+                ),
+                pictures: [
+                    'https://i0.wp.com/post.healthline.com/wp-content/uploads/2023/02/female-dumbbells-1296x728-header-1296x729.jpg',
+                ],
+            }}
+        >
+            <div className={style.weekdays}>
+                {WeekdaysDefinition.map((weekDay, index) => {
+                    const today = getDayOfWeek() === index + 1
+                    const weekVal =
+                        (weekEntity as any)[`weekday_${index + 1}`] || null
+                    if (weekVal !== null) {
+                        const training = (trainingPageData?.weekPlan as any)[
+                            `weekday_${index + 1}`
+                        ]
+                        return (
+                            <Weekday weekday={weekDay} key={weekDay}>
+                                <DragDrop
+                                    index={training.id}
+                                    extraData={training}
+                                    group="weekday"
+                                    acceptTargetGroup={['training', 'weekday']}
+                                    onStart={(origin) => {
+                                        setSelected(origin)
+                                    }}
+                                    onCancel={() => {
+                                        setSelected(null)
+                                    }}
+                                    onEnd={() => {
+                                        setSelected(null)
+                                    }}
                                     className={clsx(
-                                        style.weekday,
-                                        style.withTraining,
-                                        today && style.currentWeekday
+                                        style.trainingCardContainer,
+                                        selected === training.id && style.fade
                                     )}
                                 >
-                                    <h3>
-                                        {weekDay} {today && <span>(Hoje)</span>}
-                                    </h3>
-                                    {training && (
-                                        <DragDrop
-                                            index={training.id}
-                                            group="weekday"
-                                            acceptTargetGroup={[
-                                                'training',
-                                                'weekday',
-                                            ]}
-                                            onStart={(origin) => {
-                                                setSelected(origin)
-                                            }}
-                                            onCancel={() => {
-                                                setSelected(null)
-                                            }}
-                                            onEnd={() => {
-                                                setSelected(null)
-                                            }}
-                                            className={
-                                                style.trainingCardContainer
-                                            }
-                                        >
-                                            <TrainingCard
-                                                training={training}
-                                                today={today}
-                                            />
-                                        </DragDrop>
-                                    )}
-                                </div>
-                            )
-                        }
+                                    <TrainingCard
+                                        training={training}
+                                        today={today}
+                                        noHover={!!selected}
+                                    />
+                                </DragDrop>
+                            </Weekday>
+                        )
+                    }
 
-                        return (
-                            <div
-                                key={weekDay}
-                                className={clsx(
-                                    style.weekday,
-                                    today && style.currentWeekday
-                                )}
-                            >
-                                <h3>{weekDay}</h3>
+                    const showPreview =
+                        dragDropData &&
+                        (dragDropData.group === 'training' ||
+                            dragDropData.group === 'weekday') &&
+                        trainingSelected === weekDay
+
+                    return (
+                        <Weekday weekday={weekDay} key={weekDay}>
+                            {showPreview ? (
                                 <DragDrop
                                     index={weekDay}
                                     group="weekday"
                                     onCancel={() => {
                                         setSelected(null)
                                     }}
-                                    onEnd={(origin, target) => {
+                                    onHover={(target) => {
+                                        setTrainingSelected((x) => {
+                                            if (!x || x !== target) {
+                                                return target
+                                            } else {
+                                                return x
+                                            }
+                                        })
+                                    }}
+                                    onLeave={() => {
+                                        setTrainingSelected(null)
+                                    }}
+                                    onEnd={(origin) => {
                                         changeWeekPlan(origin, index + 1)
                                     }}
                                     onlyTarget={true}
-                                    className={clsx(
-                                        style.fakeCard,
-                                        today && style.fakeCardCurrentWeekday
-                                    )}
+                                    className={style.trainingCardContainer}
                                 >
-                                    <Button>Sem Treino Atribuído</Button>
+                                    <TrainingCard
+                                        training={dragDropData.extraData}
+                                        forceWeekPlan={true}
+                                    />
                                 </DragDrop>
-                            </div>
-                        )
-                    })}
-                </div>
+                            ) : (
+                                <DragDrop
+                                    index={weekDay}
+                                    group="weekday"
+                                    onCancel={() => {
+                                        setSelected(null)
+                                    }}
+                                    onHover={(target) => {
+                                        setTrainingSelected((x) => {
+                                            if (!x || x !== target) {
+                                                return target
+                                            } else {
+                                                return x
+                                            }
+                                        })
+                                    }}
+                                    onLeave={() => {
+                                        console.log('Leave')
+                                        setTrainingSelected(null)
+                                    }}
+                                    onEnd={(origin) => {
+                                        changeWeekPlan(origin, index + 1)
+                                        setTrainingSelected(null)
+                                    }}
+                                    onlyTarget={true}
+                                    className={style.fakeCard}
+                                >
+                                    Sem Treino Atribuído
+                                </DragDrop>
+                            )}
+                        </Weekday>
+                    )
+                })}
             </div>
-
-            {selected ? (
+            {selected && (
                 <DragDrop
                     onlyTarget={true}
                     group="training"
@@ -166,36 +226,14 @@ const TrainingPage = () => {
                     onEnd={(origin) => {
                         changeWeekPlan(origin)
                     }}
-                    className={clsx(style.contentInside, style.selecting)}
+                    className={clsx(style.card, style.selecting)}
                 >
-                    <h1>Treinos Disponíveis</h1>
-                    <div className={style.statusSection}>
-                        {(trainingPageData?.activeTrainings || []).map(
-                            (training, index) => {
-                                return (
-                                    <Fragment key={training.id}>
-                                        <DragDrop
-                                            index={training.id}
-                                            group="training"
-                                            onEnd={() => {
-                                                setSelected(null)
-                                            }}
-                                        >
-                                            <TrainingCard training={training} />
-                                        </DragDrop>
-                                    </Fragment>
-                                )
-                            }
-                        )}
-                        {(trainingPageData?.activeTrainings || []).length ===
-                            0 && (
-                            <h3 className={style.noTrainingFound}>
-                                Nenhum Treino Disponível
-                            </h3>
-                        )}
+                    <div className={style.content}>
+                        <div className={style.emptyDrop}>Devolver treino</div>
                     </div>
                 </DragDrop>
-            ) : (
+            )}
+            {trainingPageForm.form.active && (
                 <TrainingCardCollection
                     hideEmpty={false}
                     header="Treinos Disponíveis"
@@ -205,11 +243,9 @@ const TrainingPage = () => {
                             <DragDrop
                                 key={training.id}
                                 index={training.id}
+                                extraData={training}
                                 group="training"
                                 acceptTargetGroup={['weekday']}
-                                onEnd={() => {
-                                    setSelected(null)
-                                }}
                             >
                                 <TrainingCard
                                     key={training.id}

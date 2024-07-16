@@ -11,22 +11,18 @@ import { TrainingMuscleGroupImageDefinition } from '@/constants/training.muscleG
 import { PageContext } from '@/context/page/page.context'
 import { Business } from '@/business'
 import { useMessage } from '@/hook/message'
-import { useForm } from '@/hook/form'
 
 export const TrainingCard = ({
     training,
     today = false,
+    forceWeekPlan = false,
+    noHover = false,
 }: {
     training: TrainingType
     today?: boolean
+    forceWeekPlan?: boolean
+    noHover?: boolean
 }) => {
-    const executionPageForm = useForm<{
-        weekday: string
-        training: TrainingType
-    }>('executionPage', {
-        weekday: 'Segunda Feira',
-        training: {},
-    })
     const { training: refreshTraining, pageData } = useContext(PageContext)
     const { open } = useContext(ModalContext)
     const { question } = useMessage()
@@ -62,7 +58,10 @@ export const TrainingCard = ({
         <div
             className={clsx(
                 style.trainingCard,
-                style[training.status as string]
+                style[training.status as string],
+                (forceWeekPlan || includedInWeekPlan) &&
+                    style.includedInWeekPlan,
+                noHover && style.noHover
             )}
             style={{
                 backgroundImage: `url(${
@@ -72,91 +71,84 @@ export const TrainingCard = ({
                 })`,
             }}
         >
-            <div className={style.header}>
-                <h3>{training.name}</h3>
+            <h3>{training.name}</h3>
 
-                <div className={style.labels}>
-                    {training.muscle_group?.split(';').map((muscle) => {
-                        return (
-                            <Label key={muscle}>
-                                {TrainingMuscleGroupDefinition?.[muscle as any]}
-                            </Label>
-                        )
-                    })}
-                </div>
+            <div className={style.labels}>
+                {training.muscle_group?.split(';').map((muscle) => {
+                    return (
+                        <Label key={muscle}>
+                            {TrainingMuscleGroupDefinition?.[muscle as any]}
+                        </Label>
+                    )
+                })}
             </div>
-            <div className={style.buttons}>
-                {!includedInWeekPlan && (
-                    <>
-                        <Button
-                            icon="file_copy"
-                            onClick={() => {
-                                question(
-                                    `Deseja duplicar o treino "${training.name}"?`,
-                                    'Isso ira duplicar o treino e seus exercícios.',
-                                    () => {
-                                        Business.training
-                                            .duplicate({
-                                                id: training.id,
-                                            })
-                                            .then(() => {
-                                                refreshTraining()
-                                            })
-                                    }
-                                )
-                            }}
-                        >
-                            Duplicar
-                        </Button>
-                        <Button
-                            icon="edit"
-                            onClick={() => {
-                                open('training', 'form', training)
-                            }}
-                        >
-                            Alterar
-                        </Button>
-                        {training.status === 'ACTIVE' ? (
-                            <>
-                                {!includedInWeekPlan && (
-                                    <Button
-                                        icon="archive"
-                                        onAsyncClick={archive}
-                                    >
-                                        Arquivar
-                                    </Button>
-                                )}
-                                <Button icon="check" onAsyncClick={complete}>
-                                    Concluir
+            {!(forceWeekPlan || includedInWeekPlan) && (
+                <div className={style.buttons}>
+                    <Button
+                        icon="file_copy"
+                        onClick={() => {
+                            question(
+                                `Deseja duplicar o treino "${training.name}"?`,
+                                'Isso ira duplicar o treino e seus exercícios.',
+                                () => {
+                                    Business.training
+                                        .duplicate({
+                                            id: training.id,
+                                        })
+                                        .then(() => {
+                                            refreshTraining()
+                                        })
+                                }
+                            )
+                        }}
+                    >
+                        Duplicar
+                    </Button>
+                    <Button
+                        icon="edit"
+                        onClick={() => {
+                            open('training', 'form', training)
+                        }}
+                    >
+                        Alterar
+                    </Button>
+                    {training.status === 'ACTIVE' ? (
+                        <>
+                            {!includedInWeekPlan && (
+                                <Button icon="archive" onAsyncClick={archive}>
+                                    Arquivar
                                 </Button>
-                            </>
-                        ) : (
-                            <Button icon="undo" onAsyncClick={reopen}>
-                                Reabrir
+                            )}
+                            <Button icon="check" onAsyncClick={complete}>
+                                Concluir
                             </Button>
-                        )}
-                    </>
-                )}
-            </div>
+                        </>
+                    ) : (
+                        <Button icon="undo" onAsyncClick={reopen}>
+                            Reabrir
+                        </Button>
+                    )}
+                </div>
+            )}
+            <Button
+                className={style.moreOptions}
+                icon="open_in_new"
+                onClick={() => {
+                    router.push(`/private/training/${training.id}`)
+                }}
+                variant="secondary"
+            />
             {today && (
                 <Button
+                    className={style.run}
                     icon="play_arrow"
                     onClick={() => {
                         router.push(`/private/training/execute`)
                     }}
                 >
-                    Executar Treino
+                    Executar
                 </Button>
             )}
-            <Button
-                icon="file_copy"
-                onClick={() => {
-                    router.push(`/private/training/${training.id}`)
-                }}
-                bag={<span>{training.exercise?.length || 0}</span>}
-            >
-                Exercícios
-            </Button>
         </div>
     )
 }
